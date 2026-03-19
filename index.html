@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APE Studio | Outreach, LinkedIn & Deliverability Consulting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5fbfd;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: #ffffff;
+      --line: rgba(30, 96, 145, 0.12);
+      --text: #16324a;
+      --muted: #5b7488;
+      --primary: #1e6091;
+      --primary-2: #57c4e5;
+      --primary-3: #a9d6e5;
+      --accent: #0e7490;
+      --shadow: 0 18px 40px rgba(27, 88, 131, 0.12);
+      --radius: 24px;
+      --radius-sm: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(87, 196, 229, 0.20), transparent 28%),
+        radial-gradient(circle at top right, rgba(169, 214, 229, 0.45), transparent 24%),
+        linear-gradient(180deg, #f7fcfe 0%, #eef8fb 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.72);
+      border-bottom: 1px solid rgba(30, 96, 145, 0.08);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 82px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 18px rgba(30, 96, 145, 0.18);
+      border: 3px solid rgba(255,255,255,0.9);
+      background: white;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 1.05rem;
+      line-height: 1.1;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.22s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      background: rgba(87, 196, 229, 0.12);
+      color: var(--accent);
+      outline: none;
+    }
+
+    .hero {
+      padding: 72px 0 30px;
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      background:
+        linear-gradient(135deg, rgba(30, 96, 145, 0.96), rgba(87, 196, 229, 0.95));
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-shell::before,
+    .hero-shell::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(14px);
+      opacity: 0.45;
+      z-index: -1;
+    }
+
+    .hero-shell::before {
+      width: 320px;
+      height: 320px;
+      background: rgba(255,255,255,0.22);
+      top: -120px;
+      right: -60px;
+    }
+
+    .hero-shell::after {
+      width: 240px;
+      height: 240px;
+      background: rgba(255,255,255,0.14);
+      bottom: -90px;
+      left: -50px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 38px;
+      align-items: center;
+      padding: 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.96);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+
+    .hero p {
+      margin: 22px 0 0;
+      max-width: 58ch;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: #fff;
+      color: var(--primary);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.10);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 30px;
+      padding: 24px;
+      color: white;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .hero-profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .hero-profile img {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: white;
+      padding: 6px;
+      border: 2px solid rgba(255,255,255,0.75);
+    }
+
+    .hero-profile strong {
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .hero-profile span {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.94rem;
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+    }
+
+    .hero-point b {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 0.98rem;
+    }
+
+    .hero-point span {
+      display: block;
+      color: rgba(255,255,255,0.78);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .icon-badge {
+      min-width: 38px;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.16);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+    }
+
+    section {
+      padding: 44px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      margin: 0 0 14px;
+      color: var(--primary);
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--surface);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h3 {
+      margin: 0 0 14px;
+      color: var(--primary);
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      padding: 20px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(87, 196, 229, 0.11), rgba(169, 214, 229, 0.14));
+      border: 1px solid rgba(30, 96, 145, 0.08);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.65rem;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .services-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      position: relative;
+      display: block;
+      padding: 26px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      overflow: hidden;
+      min-height: 100%;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      opacity: 0.95;
+    }
+
+    .service-card:hover,
+    .service-card:focus-visible {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 40px rgba(26, 91, 134, 0.18);
+      border-color: rgba(30, 96, 145, 0.18);
+      outline: none;
+    }
+
+    .service-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      color: var(--primary);
+      background: linear-gradient(180deg, rgba(169, 214, 229, 0.35), rgba(87, 196, 229, 0.18));
+      border: 1px solid rgba(30, 96, 145, 0.08);
+    }
+
+    .price {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(30, 96, 145, 0.08);
+      color: var(--primary);
+      font-size: 0.86rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .service-card h3 {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    .service-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .service-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #426074;
+      font-size: 0.94rem;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .step {
+      padding: 22px;
+      border-radius: 24px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: linear-gradient(180deg, var(--primary), var(--primary-2));
+      color: white;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 1.05rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(30, 96, 145, 0.98), rgba(87, 196, 229, 0.92));
+      padding: 34px;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      top: -80px;
+      right: -80px;
+    }
+
+    .contact-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .contact-card h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .contact-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.85);
+      max-width: 56ch;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+      min-width: 250px;
+    }
+
+    .contact-actions .btn {
+      width: 100%;
+    }
+
+    .contact-email {
+      color: white;
+      text-align: center;
+      font-weight: 700;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    footer {
+      padding: 26px 0 42px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner a {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        padding: 48px 28px;
+      }
+
+      .contact-actions {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        min-height: auto;
+        padding: 14px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 4px;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-shell {
+        border-radius: 28px;
+      }
+
+      .hero-grid {
+        padding: 34px 20px;
+      }
+
+      .panel,
+      .service-card,
+      .step,
+      .contact-card {
+        padding: 22px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="APE Studio home">
+        <img src="monkey-logo.png" alt="APE Studio logo">
+        <div>
+          <span>APE Studio</span>
+          <small>Email & Growth Consulting</small>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">Growth systems that actually convert</div>
+              <h1>Build a brand, pipeline and outreach engine that works.</h1>
+              <p>
+                APE Studio helps founders, consultants and growing teams improve their LinkedIn presence,
+                launch better outreach campaigns and turn strategy into real conversations.
+              </p>
+              <div class="hero-actions">
+                <a href="#services" class="btn btn-primary">Explore services</a>
+                <a href="#contact" class="btn btn-secondary">Book a consultation</a>
+              </div>
+            </div>
+
+            <aside class="hero-card" aria-label="Highlights">
+              <div class="hero-profile">
+                <img src="monkey-logo.png" alt="APE Studio profile image">
+                <div>
+                  <strong>APE Studio</strong>
+                  <span>Outreach, LinkedIn and deliverability consulting</span>
+                </div>
+              </div>
+
+              <div class="hero-points">
+                <div class="hero-point">
+                  <div class="icon-badge">✦</div>
+                  <div>
+                    <b>Clarity first</b>
+                    <span>Sharp positioning, better messaging and offers that feel easy to buy.</span>
+                  </div>
+                </div>
+                <div class="hero-point">
+                  <div class="icon-badge">↗</div>
+                  <div>
+                    <b>Pipeline focused</b>
+                    <span>Outreach systems designed to create replies, meetings and qualified demand.</span>
+                  </div>
+                </div>
+                <div class="hero-point">
+                  <div class="icon-badge">✓</div>
+                  <div>
+                    <b>Done with precision</b>
+                    <span>From profile optimization to deliverability, every detail supports performance.</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>Modern outreach, smarter positioning, cleaner growth.</h2>
+          <p>
+            Whether you want a stronger LinkedIn presence, better cold email campaigns or a clean B2B lead engine,
+            APE Studio gives you practical systems built for visibility, trust and conversion.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel">
+            <h3>What we do</h3>
+            <p>
+              We help individuals and businesses turn expertise into demand. That includes LinkedIn profile optimization,
+              CV and personal branding support, outreach strategy, campaign setup, deliverability consulting and lead generation.
+              The goal is simple: make your business easier to discover, easier to trust and easier to buy from.
+            </p>
+            <div class="stats">
+              <div class="stat">
+                <strong>7</strong>
+                <span>core services designed for visibility, pipeline and outreach growth</span>
+              </div>
+              <div class="stat">
+                <strong>1:1</strong>
+                <span>tailored consulting based on your goals, audience and current setup</span>
+              </div>
+              <div class="stat">
+                <strong>B2B</strong>
+                <span>positioning and lead generation built for service businesses and founders</span>
+              </div>
+              <div class="stat">
+                <strong>Done</strong>
+                <span>with strategy, structure and execution instead of vague advice</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Who this is for</h3>
+            <p>
+              APE Studio is built for consultants, founders, freelancers, agencies and professionals who want sharper personal branding,
+              stronger outreach and a more reliable way to create opportunities. If your current online presence feels generic,
+              your outreach is inconsistent or your pipeline depends too much on luck, this is where structure starts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Clickable service section with clear offers and pricing</h2>
+          <p>
+          </p>
+        </div>
+
+        <div class="services-wrap">
+          <a class="service-card" href="mailto:info@apecstudio.com?subject=LinkedIn%20Profile%20Optimization%20Inquiry" aria-label="LinkedIn Profile Optimization">
+            <div class="service-top">
+              <div class="service-icon">in</div>
+              <div class="price">€180 - €320</div>
+            </div>
+            <h3>LinkedIn Profile Optimization</h3>
+            <p>Turn your profile into a clear, professional and conversion-friendly personal brand asset.</p>
+            <ul class="service-list">
+              <li>Headline, About and experience rewrite</li>
+              <li>Profile positioning and keyword optimization</li>
+              <li>Content direction and visual recommendations</li>
+            </ul>
+            <span class="service-cta">Inquire about this service →</span>
+          </a>
+
+          <a class="service-card" href="mailto:info@apecstudio.com?subject=CV%20and%20Personal%20Branding%20Inquiry" aria-label="CV and Personal Branding">
+            <div class="service-top">
+              <div class="service-icon">CV</div>
+              <div class="price">€120 - €250</div>
+            </div>
+            <h3>CV & Personal Branding</h3>
+            <p>Create a polished, modern and strategically written professional presence across your CV and profile.</p>
+            <ul class="service-list">
+              <li>CV writing or restructuring</li>
+              <li>ATS-friendly formatting</li>
+              <li>Brand messaging aligned with your goals</li>
+            </ul>
+            <span class="service-cta">Inquire about this service →</span>
+          </a>
+
+          <a class="service-card" href="mailto:info@apecstudio.com?subject=Email%20Outreach%20Setup%20Inquiry" aria-label="Email Outreach Setup">
+            <div class="service-top">
+              <div class="service-icon">✉</div>
+              <div class="price">€450 - €900</div>
+            </div>
+            <h3>Email Outreach Setup</h3>
+            <p>Build a complete cold email system with messaging, structure and setup ready for launch.</p>
+            <ul class="service-list">
+              <li>Campaign strategy and sequence structure</li>
+              <li>Email copy and follow-up framework</li>
+              <li>Basic deliverability and targeting guidance</li>
+            </ul>
+            <span class="service-cta">Inquire about this service →</span>
+          </a>
+
+          <a class="service-card" href="mailto:info@apecstudio.com?subject=LinkedIn%20Outreach%20Strategy%20Inquiry" aria-label="LinkedIn Outreach Strategy">
+            <div class="service-top">
+              <div class="service-icon">◎</div>
+              <div class="price">€350 - €700</div>
+            </div>
+            <h3>LinkedIn Outreach Strategy</h3>
+            <p>Use thoughtful, better-structured messaging to create conversations and warm up your pipeline.</p>
+            <ul class="service-list">
+              <li>ICP definition and targeting strategy</li>
+              <li>Connection and follow-up message flows</li>
+              <li>Scalable outreach structure</li>
+            </ul>
+            <span class="service-cta">Inquire about this service →</span>
+          </a>
+
+          <a class="service-card" href="mailto:info@apecstudio.com?subject=Cold%20Email%20Campaign%20Management%20Inquiry" aria-label="Cold Email Campaign Management">
+            <div class="service-top">
+              <div class="service-icon">↺</div>
+              <div class="price">€700 - €1500/mo</div>
+            </div>
+            <h3>Cold Email Campaign Management</h3>
+            <p>Ongoing management for brands that want consistent execution, optimization and outreach performance.</p>
+            <ul class="service-list">
+              <li>Campaign monitoring and iteration</li>
+              <li>A/B testing and performance review</li>
+              <li>Deliverability-aware optimization</li>
+            </ul>
+            <span class="service-cta">Inquire about this service →</span>
+          </a>
+
+          <a class="service-card" href="mailto:info@apecstudio.com?subject=B2B%20Lead%20Generation%20Inquiry" aria-label="B2B Lead Generation">
+            <div class="service-top">
+              <div class="service-icon">⌁</div>
+              <div class="price">€0.8 - €2.5/lead</div>
+            </div>
+            <h3>B2B Lead Generation</h3>
+            <p>Get clean, targeted lead lists that fit your ideal customer profile and outreach goals.</p>
+            <ul class="service-list">
+              <li>Prospect research and segmentation</li>
+              <li>Email verification support</li>
+              <li>Lead lists ready for outreach</li>
+            </ul>
+            <span class="service-cta">Inquire about this service →</span>
+          </a>
+
+          <a class="service-card" href="mailto:info@apecstudio.com?subject=Deliverability%20and%20Outreach%20Consulting%20Inquiry" aria-label="Deliverability and Outreach Consulting">
+            <div class="service-top">
+              <div class="service-icon">⚙</div>
+              <div class="price">€90 - €150/hr</div>
+            </div>
+            <h3>Deliverability & Outreach Consulting</h3>
+            <p>Audit your setup, messaging and infrastructure to improve inbox placement and campaign quality.</p>
+            <ul class="service-list">
+              <li>DNS, domain health and setup review</li>
+              <li>Warm-up and sending strategy guidance</li>
+              <li>Outreach analysis with practical next steps</li>
+            </ul>
+            <span class="service-cta">Inquire about this service →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <h2>A simple process that keeps everything clear</h2>
+          <p>
+            You do not need a huge agency workflow. You need a clean process that feels premium, fast and trustworthy.
+          </p>
+        </div>
+
+        <div class="process">
+          <article class="step">
+            <div class="step-number">01</div>
+            <h3>Discovery</h3>
+            <p>We define your goal, offer, target audience and current bottlenecks before any work begins.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">02</div>
+            <h3>Strategy</h3>
+            <p>You get a practical direction for positioning, messaging, targeting and channel execution.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">03</div>
+            <h3>Execution</h3>
+            <p>Your profile, campaign, copy or lead workflow is built with structure and performance in mind.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">04</div>
+            <h3>Optimization</h3>
+            <p>We refine what matters most so your growth system is cleaner, sharper and easier to scale.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-grid">
+            <div>
+              <h2>Ready to build a stronger brand and outreach system?</h2>
+              <p>
+                Whether you need a better LinkedIn profile, stronger email outreach, cleaner lead generation or deliverability support,
+                APE Studio can help you build something that looks premium and performs like it should.
+              </p>
+            </div>
+
+            <div class="contact-actions">
+              <a href="mailto:info@apecstudio.com?subject=Consultation%20Request" class="btn btn-primary">Book a consultation</a>
+              <a href="mailto:info@apecstudio.com" class="contact-email">info@apecstudio.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 APE Studio. All rights reserved.</span>
+      <a href="#home">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
+
