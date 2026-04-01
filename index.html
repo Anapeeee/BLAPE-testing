@@ -17,23 +17,25 @@
 
   <style>
     :root {
-      --bg: #f5fbff;
-      --bg-soft: #eef8fc;
-      --surface: rgba(255, 255, 255, 0.86);
+      --bg: #f7fbff;
+      --bg-soft: #eef7fc;
+      --surface: rgba(255, 255, 255, 0.88);
       --surface-strong: #ffffff;
       --line: rgba(28, 68, 107, 0.10);
       --text: #14324f;
-      --muted: #5b7488;
+      --muted: #61788d;
       --primary: #1c446b;
       --primary-2: #2e78a6;
-      --primary-3: #62c3e5;
-      --accent: #F472B6;
-      --accent-strong: #E85D9E;
-      --accent-soft: rgba(244, 114, 182, 0.18);
+      --primary-3: #72c7e5;
+      --accent: #b78cf3;
+      --accent-strong: #9a6ee6;
+      --accent-soft: rgba(183, 140, 243, 0.14);
+      --accent-glow: rgba(183, 140, 243, 0.24);
+      --warm-soft: rgba(255, 207, 157, 0.18);
       --white: #ffffff;
-      --shadow: 0 18px 40px rgba(27, 88, 131, 0.12);
-      --shadow-strong: 0 28px 60px rgba(27, 88, 131, 0.16);
-      --radius-xl: 36px;
+      --shadow: 0 18px 40px rgba(27, 88, 131, 0.10);
+      --shadow-strong: 0 28px 70px rgba(27, 88, 131, 0.14);
+      --radius-xl: 34px;
       --radius-lg: 28px;
       --radius-md: 22px;
       --radius-sm: 18px;
@@ -53,9 +55,9 @@
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(98, 195, 229, 0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(244, 183, 59, 0.08), transparent 22%),
-        linear-gradient(180deg, #f9fdff 0%, #edf8fc 100%);
+        radial-gradient(circle at top left, rgba(114, 199, 229, 0.16), transparent 24%),
+        radial-gradient(circle at top right, rgba(183, 140, 243, 0.10), transparent 18%),
+        linear-gradient(180deg, #fbfdff 0%, #eef8fc 100%);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -79,7 +81,7 @@
     }
 
     .container {
-      width: min(calc(100% - 32px), var(--max));
+      width: min(calc(100% - 34px), var(--max));
       margin: 0 auto;
     }
 
@@ -87,8 +89,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(16px);
-      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(18px);
+      background: rgba(255, 255, 255, 0.82);
       border-bottom: 1px solid rgba(28, 68, 107, 0.08);
     }
 
@@ -111,29 +113,30 @@
     }
 
     .brand img {
-      width: 56px;
-      height: 56px;
+      width: 48px;
+      height: 48px;
       object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
       background: white;
-      box-shadow: 0 8px 18px rgba(28, 68, 107, 0.16);
+      padding: 4px;
+      border: 1px solid rgba(28, 68, 107, 0.10);
+      box-shadow: 0 8px 18px rgba(28, 68, 107, 0.12);
     }
 
     .brand span {
       display: block;
-      font-size: 1.06rem;
-      line-height: 1.1;
+      font-size: 1.05rem;
+      line-height: 1.05;
     }
 
     .brand small {
       display: block;
-      margin-top: 2px;
+      margin-top: 3px;
       color: var(--muted);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
     }
 
     .nav {
@@ -148,14 +151,14 @@
       padding: 10px 14px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       color: var(--primary);
       transition: 0.22s ease;
     }
 
     .nav a:hover,
     .nav a:focus-visible {
-      background: rgba(98, 195, 229, 0.12);
+      background: rgba(114, 199, 229, 0.12);
       outline: none;
     }
 
@@ -166,14 +169,17 @@
     }
 
     .hero {
-      padding: 28px 0 36px;
+      padding: 24px 0 34px;
     }
 
     .hero-shell {
       position: relative;
       overflow: hidden;
       border-radius: var(--radius-xl);
-      background: linear-gradient(135deg, #1c446b 0%, #2e78a6 48%, #62c3e5 100%);
+      background:
+        radial-gradient(circle at 78% 34%, rgba(255, 255, 255, 0.14), transparent 19%),
+        radial-gradient(circle at 15% 85%, rgba(255, 207, 157, 0.12), transparent 18%),
+        linear-gradient(135deg, #193d63 0%, #2b6f9c 48%, #77cae7 100%);
       box-shadow: var(--shadow-strong);
       isolation: isolate;
     }
@@ -184,104 +190,102 @@
       position: absolute;
       border-radius: 50%;
       pointer-events: none;
-      z-index: -1;
+      z-index: 0;
     }
 
     .hero-shell::before {
-      width: 720px;
-      height: 720px;
-      right: -180px;
+      width: 620px;
+      height: 620px;
+      right: -160px;
       top: 50%;
       transform: translateY(-50%);
       background: radial-gradient(
         circle,
         rgba(255, 255, 255, 0.16) 0%,
         rgba(255, 255, 255, 0.05) 58%,
-        transparent 72%
-      );
-    }
-
-    .hero-shell::after {
-      width: 360px;
-      height: 360px;
-      left: -80px;
-      bottom: -110px;
-      background: radial-gradient(
-        circle,
-        rgba(244, 183, 59, 0.20) 0%,
-        rgba(244, 183, 59, 0.03) 62%,
         transparent 74%
       );
     }
 
+    .hero-shell::after {
+      width: 280px;
+      height: 280px;
+      left: -70px;
+      bottom: -90px;
+      background: radial-gradient(
+        circle,
+        rgba(183, 140, 243, 0.20) 0%,
+        rgba(183, 140, 243, 0.03) 64%,
+        transparent 76%
+      );
+    }
+
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: 1.04fr 0.96fr;
-      gap: 34px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 30px;
       align-items: center;
-      min-height: 760px;
-      padding: 68px 56px;
+      min-height: 680px;
+      padding: 58px 52px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 18px;
+      padding: 11px 17px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.20);
       color: rgba(255, 255, 255, 0.98);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: 0.01em;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
     }
 
     .hero h1 {
-  margin: 0;
-  font-size: clamp(3.4rem, 7.2vw, 6.6rem);
-  line-height: 0.92;
-  letter-spacing: -0.07em;
-  max-width: 8.6ch;
-
-  background: linear-gradient(135deg, #ffffff 0%, #f472b6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
       margin: 0;
+      font-size: clamp(2.95rem, 6vw, 5.15rem);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      max-width: 8.8ch;
       color: white;
-      font-size: clamp(3.4rem, 7.2vw, 6.6rem);
-      line-height: 0.92;
-      letter-spacing: -0.07em;
-      max-width: 8.6ch;
+      text-wrap: balance;
     }
 
     .hero h1 .accent {
-      color: var(--accent);
+      display: inline-block;
+      background: linear-gradient(135deg, #d8c3ff 0%, #b78cf3 48%, #efe7ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 8px 24px rgba(183, 140, 243, 0.18));
     }
 
     .hero-kicker {
-      margin: 22px 0 0;
-      color: rgba(255, 255, 255, 0.98);
-      font-size: clamp(1.22rem, 2.2vw, 1.8rem);
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.97);
+      font-size: clamp(1.08rem, 1.9vw, 1.45rem);
       font-weight: 600;
-      line-height: 1.22;
-      max-width: 22ch;
+      line-height: 1.24;
+      max-width: 24ch;
     }
 
     .hero-copy {
-      margin: 22px 0 0;
-      max-width: 56ch;
-      color: rgba(255, 255, 255, 0.86);
-      font-size: 1.08rem;
+      margin: 18px 0 0;
+      max-width: 54ch;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 1rem;
     }
 
     .hero-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 34px;
+      margin-top: 28px;
     }
 
     .btn {
@@ -289,8 +293,8 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 56px;
-      padding: 0 24px;
+      min-height: 54px;
+      padding: 0 22px;
       border-radius: 999px;
       font-weight: 800;
       border: none;
@@ -305,11 +309,11 @@
     .btn-primary {
       background: white;
       color: var(--primary);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.10);
     }
 
     .btn-primary:hover {
-      background: #fff8ea;
+      background: #fbf8ff;
     }
 
     .btn-secondary {
@@ -323,81 +327,84 @@
     }
 
     .hero-card {
+      position: relative;
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 32px;
-      padding: 26px;
+      border-radius: 30px;
+      padding: 24px;
       color: white;
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(8px);
-      max-width: 520px;
+      backdrop-filter: blur(10px);
+      max-width: 500px;
       margin-left: auto;
     }
 
     .hero-profile {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 22px;
+      gap: 15px;
+      margin-bottom: 20px;
     }
 
     .hero-profile img {
-      width: 78px;
-      height: 78px;
-      border-radius: 50%;
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
       object-fit: cover;
       background: white;
-      padding: 6px;
-      border: 2px solid rgba(255, 255, 255, 0.75);
+      padding: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
     }
 
     .hero-profile strong {
       display: block;
-      font-size: 1.12rem;
+      font-size: 1.08rem;
     }
 
     .hero-profile span {
       color: rgba(255, 255, 255, 0.82);
-      font-size: 0.96rem;
+      font-size: 0.94rem;
     }
 
     .hero-points {
       display: grid;
-      gap: 14px;
+      gap: 12px;
     }
 
     .hero-point {
       display: flex;
       gap: 12px;
       align-items: flex-start;
-      padding: 16px 18px;
+      padding: 15px 16px;
       background: rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
+      border-radius: 18px;
     }
 
     .icon-badge {
-      min-width: 42px;
-      width: 42px;
-      height: 42px;
+      min-width: 40px;
+      width: 40px;
+      height: 40px;
       border-radius: 14px;
       display: grid;
       place-items: center;
-      background: rgba(255, 255, 255, 0.16);
-      color: var(--accent);
+      background: rgba(255, 255, 255, 0.18);
+      color: #efe6ff;
       font-weight: 900;
-      font-size: 1rem;
+      font-size: 0.98rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
     }
 
     .hero-point b {
       display: block;
       margin-bottom: 2px;
-      font-size: 1rem;
+      font-size: 0.98rem;
     }
 
     .hero-point span {
       display: block;
       color: rgba(255, 255, 255, 0.80);
-      font-size: 0.92rem;
+      font-size: 0.91rem;
       line-height: 1.45;
     }
 
@@ -416,7 +423,7 @@
       color: var(--primary);
       font-size: clamp(2rem, 4vw, 3rem);
       letter-spacing: -0.04em;
-      line-height: 1.02;
+      line-height: 1.04;
     }
 
     .section-head p {
@@ -429,7 +436,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .audience-card,
@@ -446,24 +453,77 @@
     }
 
     .audience-card {
-      padding: 26px;
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.90)),
+        linear-gradient(135deg, rgba(114, 199, 229, 0.10), rgba(183, 140, 243, 0.08));
+    }
+
+    .audience-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-2), var(--primary-3), var(--accent));
+      opacity: 0.95;
+    }
+
+    .audience-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      background: linear-gradient(180deg, rgba(114, 199, 229, 0.16), rgba(183, 140, 243, 0.14));
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      border: 1px solid rgba(28, 68, 107, 0.08);
     }
 
     .audience-card h3 {
-      margin: 0 0 10px;
+      margin: 0 0 8px;
       color: var(--primary);
-      font-size: 1.3rem;
+      font-size: 1.32rem;
       letter-spacing: -0.03em;
     }
 
     .audience-card p {
-      margin: 0;
+      margin: 0 0 16px;
       color: var(--muted);
+    }
+
+    .audience-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 9px;
+    }
+
+    .audience-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #4d677a;
+      font-size: 0.94rem;
+    }
+
+    .audience-list li::before {
+      content: "•";
+      color: var(--accent-strong);
+      font-weight: 900;
+      font-size: 1.1rem;
+      line-height: 1;
+      margin-top: 1px;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.02fr 0.98fr;
       gap: 24px;
       align-items: stretch;
     }
@@ -494,7 +554,7 @@
     .stat {
       padding: 20px;
       border-radius: 20px;
-      background: linear-gradient(180deg, rgba(98, 195, 229, 0.11), rgba(244, 183, 59, 0.09));
+      background: linear-gradient(180deg, rgba(114, 199, 229, 0.11), rgba(183, 140, 243, 0.09));
       border: 1px solid rgba(28, 68, 107, 0.08);
     }
 
@@ -510,6 +570,86 @@
     .stat span {
       color: var(--muted);
       font-size: 0.94rem;
+    }
+
+    .reason-panel {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(183, 140, 243, 0.10), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.97), rgba(248,252,255,0.95));
+    }
+
+    .reason-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .reason-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(114, 199, 229, 0.16), rgba(183, 140, 243, 0.14));
+      border: 1px solid rgba(28, 68, 107, 0.08);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 22px rgba(28, 68, 107, 0.08);
+      flex-shrink: 0;
+    }
+
+    .reason-logo img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+    }
+
+    .reason-stack {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .reason-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 15px;
+      border-radius: 18px;
+      background: rgba(114, 199, 229, 0.08);
+      border: 1px solid rgba(28, 68, 107, 0.07);
+    }
+
+    .reason-item:nth-child(2) {
+      background: rgba(183, 140, 243, 0.08);
+    }
+
+    .reason-item:nth-child(3) {
+      background: rgba(255, 207, 157, 0.11);
+    }
+
+    .reason-item b {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 2px;
+      font-size: 0.97rem;
+    }
+
+    .reason-item span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .reason-dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+      box-shadow: 0 0 0 6px var(--accent-soft);
+      flex-shrink: 0;
     }
 
     .services-group {
@@ -569,7 +709,7 @@
     .service-card:hover,
     .service-card:focus-visible {
       transform: translateY(-6px);
-      box-shadow: 0 24px 40px rgba(26, 91, 134, 0.18);
+      box-shadow: 0 24px 40px rgba(26, 91, 134, 0.14);
       border-color: rgba(28, 68, 107, 0.18);
       outline: none;
     }
@@ -590,7 +730,7 @@
       place-items: center;
       font-size: 1.3rem;
       color: var(--primary);
-      background: linear-gradient(180deg, rgba(98, 195, 229, 0.18), rgba(244, 183, 59, 0.12));
+      background: linear-gradient(180deg, rgba(114, 199, 229, 0.18), rgba(183, 140, 243, 0.12));
       border: 1px solid rgba(28, 68, 107, 0.08);
     }
 
@@ -669,7 +809,7 @@
       padding: 8px 12px;
       border-radius: 999px;
       background: var(--accent-soft);
-      color: #8b5d00;
+      color: var(--accent-strong);
       font-size: 0.82rem;
       font-weight: 900;
       text-transform: uppercase;
@@ -713,9 +853,10 @@
       display: grid;
       place-items: center;
       margin-bottom: 14px;
-      background: linear-gradient(180deg, var(--primary), var(--primary-3));
+      background: linear-gradient(180deg, var(--primary), var(--accent));
       color: white;
       font-weight: 900;
+      box-shadow: 0 10px 20px rgba(183, 140, 243, 0.16);
     }
 
     .step h3 {
@@ -733,7 +874,7 @@
     .contact-card {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(28, 68, 107, 0.98), rgba(98, 195, 229, 0.92));
+      background: linear-gradient(135deg, rgba(28, 68, 107, 0.98), rgba(114, 199, 229, 0.94));
       padding: 34px;
       color: white;
     }
@@ -985,17 +1126,29 @@
 
         <div class="audience-grid">
           <div class="audience-card">
+            <div class="audience-icon">◫</div>
             <h3>For companies</h3>
             <p>
-              If you need leads, cleaner outreach, better follow-up or someone to keep your campaigns running properly, this is for you.
+              Built for teams that need outreach to feel cleaner, more strategic and less chaotic.
             </p>
+            <ul class="audience-list">
+              <li>Lead generation and targeting that actually makes sense</li>
+              <li>Email and LinkedIn outreach systems that feel structured</li>
+              <li>Deliverability support so campaigns stop dying quietly</li>
+            </ul>
           </div>
 
           <div class="audience-card">
+            <div class="audience-icon">✦</div>
             <h3>For individuals</h3>
             <p>
-              If you need a better LinkedIn, a better CV, stronger positioning or a smarter way to get interviews and opportunities, this is for you.
+              For people who need clarity, sharper positioning and a better way to get noticed.
             </p>
+            <ul class="audience-list">
+              <li>LinkedIn and CV refinement that feels more premium</li>
+              <li>Stronger personal positioning for jobs and opportunities</li>
+              <li>Practical direction when you are too in your head to move</li>
+            </ul>
           </div>
         </div>
 
@@ -1029,16 +1182,48 @@
             </div>
           </div>
 
-          <div class="panel">
-            <h3>Why people come to us</h3>
+          <div class="panel reason-panel">
+            <div class="reason-header">
+              <div class="reason-logo">
+                <img src="monkey-logo.png" alt="APE Collective logo mark" />
+              </div>
+              <div>
+                <h3 style="margin: 0;">Why people come to us</h3>
+              </div>
+            </div>
+
             <p>
-              Because the problem usually is not just effort. It is unclear positioning, weak messaging, poor follow-up, spam issues or a system that never got set up properly in the first place. We fix the boring, frustrating parts so things can actually move.
+              Because the problem usually is not effort. It is unclear positioning, weak messaging, poor follow-up, spam issues or a system that never got set up properly in the first place.
             </p>
+
+            <div class="reason-stack">
+              <div class="reason-item">
+                <div class="reason-dot"></div>
+                <div>
+                  <b>Too much noise</b>
+                  <span>They are doing a lot, but none of it feels clear, consistent or sharp.</span>
+                </div>
+              </div>
+
+              <div class="reason-item">
+                <div class="reason-dot"></div>
+                <div>
+                  <b>Too many blind spots</b>
+                  <span>Weak copy, weak positioning, weak setup and no clear idea what is actually blocking results.</span>
+                </div>
+              </div>
+
+              <div class="reason-item">
+                <div class="reason-dot"></div>
+                <div>
+                  <b>Too little time</b>
+                  <span>They want it done properly without having to become an expert in all of it themselves.</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-}
-</style>
     </section>
 
     <section id="services">
