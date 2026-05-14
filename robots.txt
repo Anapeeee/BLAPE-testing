@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://apecstudio.github.io/BLAPE-testing/sitemap.xml
