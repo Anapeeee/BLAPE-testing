@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV and Personal Branding | BLAPE</title>
+  <meta name="description" content="We write CVs and build personal brands that get senior professionals noticed by the right people — headhunters, investors and decision-makers." />
+  <link rel="canonical" href="https://apecstudio.github.io/BLAPE-testing/services/cv-personal-branding.html" />
+  <link rel="icon" href="../monkey-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    .service-hero {
+      padding: 60px 0 50px;
+      border-bottom: 1px solid var(--line);
+    }
+    .service-hero .kicker {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(169,140,240,0.12);
+      color: var(--accent-strong);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .service-hero h1 {
+      color: var(--primary);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 18px;
+      max-width: 22ch;
+    }
+    .service-hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 56ch;
+      margin-bottom: 28px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .package-card {
+      padding: 32px;
+      border-radius: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .package-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .package-card.featured {
+      background: linear-gradient(135deg, #193d63 0%, #2b6f9c 100%);
+      border-color: transparent;
+      color: white;
+    }
+    .package-name {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary-2);
+      margin-bottom: 10px;
+    }
+    .package-card.featured .package-name { color: rgba(255,255,255,0.7); }
+    .package-price {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+    .package-card.featured .package-price { color: white; }
+    .package-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .package-card.featured .package-desc { color: rgba(255,255,255,0.75); }
+    .package-divider { border: none; border-top: 1px solid var(--line); margin: 16px 0; }
+    .package-card.featured .package-divider { border-top-color: rgba(255,255,255,0.15); }
+    .package-features { list-style: none; flex-grow: 1; margin-bottom: 24px; }
+    .package-features li {
+      display: flex; gap: 10px;
+      color: var(--muted); font-size: 0.9rem; margin-bottom: 10px;
+    }
+    .package-card.featured .package-features li { color: rgba(255,255,255,0.8); }
+    .package-features li::before { content: "✓"; color: var(--primary-2); font-weight: 900; flex-shrink: 0; }
+    .package-card.featured .package-features li::before { color: #77c7e3; }
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .who-card {
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+    }
+    .who-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 8px; }
+    .who-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+    @media (max-width: 600px) {
+      .packages-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand">
+        <div class="logo-circle">
+          <img src="../monkey-logo.png" alt="BLAPE logo" />
+        </div>
+        <span>BLAPE</span>
+      </a>
+      <nav class="nav" id="nav-menu">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#services" class="active">Services</a>
+        <a href="../about.html">About</a>
+        <a href="../resources.html">Resources</a>
+        <a href="../contact.html" class="nav-cta">Book a Call</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="service-hero">
+    <div class="container">
+      <span class="kicker anim-fadeup d1">CV and Personal Branding</span>
+      <h1 class="anim-fadeup d2">Your CV should open doors before you even ask.</h1>
+      <p class="anim-fadeup d3">We write CVs and build personal brands for senior professionals who want to be found by the right people — not just apply and hope.</p>
+      <div class="hero-btns anim-fadeup d4">
+        <a href="../contact.html" class="btn btn-dark">Book a Free Call</a>
+        <a href="../resources.html" class="btn btn-outline">Free CV Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IS IT FOR -->
+  <section style="background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="section-kicker">Who is this for</span>
+        <h2>Built for senior professionals</h2>
+        <p>This is not a graduate CV service. We work with experienced professionals who need to communicate seniority, not just experience.</p>
+      </div>
+      <div class="who-grid">
+        <div class="who-card anim-fadeup d1">
+          <h4>Senior Executives</h4>
+          <p>Directors, VPs and C-suite professionals moving into new roles or transitioning industries who need a CV that reflects real impact.</p>
+        </div>
+        <div class="who-card anim-fadeup d2">
+          <h4>Consultants and Freelancers</h4>
+          <p>Independent professionals who need a LinkedIn profile and personal brand that generates inbound opportunities without active pitching.</p>
+        </div>
+        <div class="who-card anim-fadeup d3">
+          <h4>Founders and Entrepreneurs</h4>
+          <p>Founders seeking board roles, advisory positions or investment who need to communicate their track record clearly and credibly.</p>
+        </div>
+        <div class="who-card anim-fadeup d4">
+          <h4>Sales and BD Leaders</h4>
+          <p>Sales professionals who need their personal brand to do the heavy lifting — building trust before the first conversation even starts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section>
+    <div class="container">
+      <div class="section-head centered">
+        <span class="section-kicker">Packages</span>
+        <h2>Choose what you need</h2>
+        <p>From a standalone CV rewrite to a full personal brand build.</p>
+      </div>
+      <div class="packages-grid">
+        <div class="package-card anim-fadeup d1">
+          <div class="package-name">Starter</div>
+          <div class="package-price">GBP 297</div>
+          <div class="package-desc">CV rewrite only. Perfect if your LinkedIn is already strong.</div>
+          <hr class="package-divider" />
+          <ul class="package-features">
+            <li>Full CV rewrite (2 pages)</li>
+            <li>ATS keyword optimisation</li>
+            <li>2 rounds of revisions</li>
+            <li>PDF and Word versions</li>
+          </ul>
+          <a href="../contact.html" class="btn btn-outline" style="width:100%;">Get Started</a>
+        </div>
+        <div class="package-card featured anim-fadeup d2">
+          <div class="package-name">Most Popular</div>
+          <div class="package-price">GBP 597</div>
+          <div class="package-desc">CV rewrite plus full LinkedIn profile optimisation. The complete package.</div>
+          <hr class="package-divider" />
+          <ul class="package-features">
+            <li>Full CV rewrite (2 pages)</li>
+            <li>ATS keyword optimisation</li>
+            <li>LinkedIn full profile rewrite</li>
+            <li>Headline and about section</li>
+            <li>Banner design brief</li>
+            <li>3 rounds of revisions</li>
+          </ul>
+          <a href="../contact.html" class="btn btn-primary" style="width:100%;">Get Started</a>
+        </div>
+        <div class="package-card anim-fadeup d3">
+          <div class="package-name">Full Brand</div>
+          <div class="package-price">GBP 997</div>
+          <div class="package-desc">Everything in Popular plus content strategy and thought leadership positioning.</div>
+          <hr class="package-divider" />
+          <ul class="package-features">
+            <li>Everything in Most Popular</li>
+            <li>Personal brand strategy doc</li>
+            <li>LinkedIn content plan (30 days)</li>
+            <li>3 ghost-written LinkedIn posts</li>
+            <li>Outreach message templates</li>
+          </ul>
+          <a href="../contact.html" class="btn btn-dark" style="width:100%;">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;padding:40px 0;">
+        <span class="section-kicker">Not sure which package?</span>
+        <h2 style="color:var(--primary);font-size:clamp(1.8rem,3.5vw,2.6rem);letter-spacing:-0.03em;margin-bottom:14px;">Book a free 30-minute call</h2>
+        <p style="color:var(--muted);margin-bottom:28px;max-width:48ch;margin-left:auto;margin-right:auto;">We will tell you honestly which package makes sense for your situation — and what results to expect.</p>
+        <a href="../contact.html" class="purple-pop">Book Your Free Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>BLAPE</h3>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;line-height:1.6;">B2B outreach systems that generate meetings, not noise.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <a href="linkedin-optimization.html">LinkedIn Optimisation</a>
+          <a href="cold-email-outreach.html">Cold Email Outreach</a>
+          <a href="email-deliverability.html">Email Deliverability</a>
+          <a href="cv-personal-branding.html">CV &amp; Personal Branding</a>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <a href="../about.html">About</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <a href="mailto:info@apecstudio.com">info@apecstudio.com</a>
+          <a href="../contact.html">Book a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 BLAPE. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
