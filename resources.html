@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources | BLAPE</title>
+  <meta name="description" content="Free guides, templates and tips to help you land B2B meetings, optimize your LinkedIn and write cold emails that convert." />
+  <link rel="canonical" href="https://apecstudio.github.io/BLAPE-testing/resources.html" />
+  <link rel="icon" href="monkey-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 36px;
+    }
+    .resource-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+    .resource-tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .tag-guide { background: rgba(47,121,168,0.1); color: var(--primary-2); }
+    .tag-template { background: rgba(169,140,240,0.12); color: var(--accent-strong); }
+    .tag-checklist { background: rgba(119,199,227,0.15); color: #2b7fa8; }
+    .resource-card h3 {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .resource-card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-2);
+      font-weight: 700;
+      font-size: 0.93rem;
+      transition: gap 0.22s ease;
+    }
+    .resource-link:hover { gap: 14px; }
+    .cta-banner {
+      margin-top: 60px;
+      padding: 52px 48px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #193d63 0%, #2b6f9c 55%, #77cae7 100%);
+      color: white;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+    }
+    .cta-banner .btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 600px) {
+      .cta-banner { padding: 32px 20px; }
+      .resources-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="logo-circle">
+          <img src="monkey-logo.png" alt="BLAPE logo" />
+        </div>
+        <span>BLAPE</span>
+      </a>
+      <nav class="nav" id="nav-menu" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="about.html">About</a>
+        <a href="resources.html" class="active">Resources</a>
+        <a href="contact.html" class="nav-cta">Book a Call</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-kicker">Free Resources</span>
+      <h1 class="anim-fadeup d1">Guides, Templates &amp; Checklists</h1>
+      <p class="anim-fadeup d2">Everything you need to start landing B2B meetings — without agency fees. Use these free resources to get started on your own.</p>
+    </div>
+  </section>
+
+  <!-- RESOURCES GRID -->
+  <section>
+    <div class="container">
+      <div class="resources-grid">
+
+        <div class="resource-card anim-fadeup d1">
+          <span class="resource-tag tag-guide">Guide</span>
+          <h3>The LinkedIn Profile Optimisation Guide</h3>
+          <p>A step-by-step breakdown of every section of your LinkedIn profile. Learn what decision-makers actually look at and how to position yourself as the obvious choice.</p>
+          <a href="services/linkedin-optimization.html" class="resource-link">Read the guide &rarr;</a>
+        </div>
+
+        <div class="resource-card anim-fadeup d2">
+          <span class="resource-tag tag-template">Template</span>
+          <h3>5 Cold Email Templates That Actually Get Replies</h3>
+          <p>Real templates used in live campaigns — not generic copy-paste. Each includes a breakdown of why it works and how to personalise it for your ICP.</p>
+          <a href="services/cold-email-outreach.html" class="resource-link">Get the templates &rarr;</a>
+        </div>
+
+        <div class="resource-card anim-fadeup d3">
+          <span class="resource-tag tag-checklist">Checklist</span>
+          <h3>Email Deliverability Checklist</h3>
+          <p>Before you send a single cold email, run through this checklist. Covers SPF, DKIM, DMARC, domain warm-up, mailbox health and sending limits.</p>
+          <a href="services/email-deliverability.html" class="resource-link">See checklist &rarr;</a>
+        </div>
+
+        <div class="resource-card anim-fadeup d1">
+          <span class="resource-tag tag-guide">Guide</span>
+          <h3>How to Write a CV That Lands Enterprise Interviews</h3>
+          <p>Most CVs are written for HR software, not for humans. This guide shows you how to write for both — and how to stand out at the shortlisting stage.</p>
+          <a href="services/cv-personal-branding.html" class="resource-link">Read the guide &rarr;</a>
+        </div>
+
+        <div class="resource-card anim-fadeup d2">
+          <span class="resource-tag tag-template">Template</span>
+          <h3>ICP (Ideal Client Profile) Template</h3>
+          <p>A simple one-page template to define your ideal client before you run any outreach. Helps you target the right people with the right message from day one.</p>
+          <a href="contact.html" class="resource-link">Request template &rarr;</a>
+        </div>
+
+        <div class="resource-card anim-fadeup d3">
+          <span class="resource-tag tag-checklist">Checklist</span>
+          <h3>Pre-Launch Outreach Checklist</h3>
+          <p>Going live with a new campaign? Run through this 15-point checklist first. Covers technical setup, copy review, targeting validation and tracking.</p>
+          <a href="contact.html" class="resource-link">Request checklist &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section>
+    <div class="container">
+      <div class="cta-banner anim-fadeup d1">
+        <h2>Want us to do it for you?</h2>
+        <p>Skip the DIY and let BLAPE build your full outreach system — from LinkedIn to inbox, fully done-for-you.</p>
+        <div class="btns">
+          <a href="contact.html" class="btn btn-primary">Book a Free Call</a>
+          <a href="index.html#services" class="btn btn-ghost-white">See All Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>BLAPE</h3>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;line-height:1.6;">B2B outreach systems that generate meetings, not noise.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <a href="services/linkedin-optimization.html">LinkedIn Optimisation</a>
+          <a href="services/cold-email-outreach.html">Cold Email Outreach</a>
+          <a href="services/email-deliverability.html">Email Deliverability</a>
+          <a href="services/cv-personal-branding.html">CV &amp; Personal Branding</a>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <a href="about.html">About</a>
+          <a href="resources.html">Resources</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <a href="mailto:info@apecstudio.com">info@apecstudio.com</a>
+          <a href="contact.html">Book a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 BLAPE. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
