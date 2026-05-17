@@ -12,19 +12,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    @keyframes rotateFade {
-      0%   { opacity: 0; transform: translateY(6px);  }
-      10%  { opacity: 1; transform: translateY(0);    }
-      22%  { opacity: 1; transform: translateY(0);    }
-      34%  { opacity: 0; transform: translateY(-6px); }
-      100% { opacity: 0; transform: translateY(-6px); }
-    }
+    /* ── Eyebrow rotator ── */
     .eyebrow-rotator {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 20px;
-      min-height: 44px;
+      min-height: 32px;
     }
     .eyebrow-dot {
       width: 8px; height: 8px;
@@ -34,23 +28,39 @@
     }
     .eyebrow-track {
       position: relative;
-      height: 24px;
+      height: 22px;
       overflow: hidden;
-      min-width: 220px;
+      min-width: 240px;
     }
     .eyebrow-item {
-      position: absolute; left: 0; top: 0;
-      color: rgba(255,255,255,0.9);
-      font-weight: 700; font-size: 0.88rem;
-      letter-spacing: 0.08em;
+      position: absolute;
+      left: 0; top: 0;
+      color: rgba(255,255,255,0.92);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
-      animation: rotateFade 10s ease-in-out infinite;
+      opacity: 0;
       white-space: nowrap;
+      will-change: opacity, transform;
     }
-    .eyebrow-item:nth-child(1) { animation-delay: 0s; }
-    .eyebrow-item:nth-child(2) { animation-delay: 2.5s; }
-    .eyebrow-item:nth-child(3) { animation-delay: 5s; }
-    .eyebrow-item:nth-child(4) { animation-delay: 7.5s; }
+
+    /* Each item: 10s total cycle, 4 items = 2.5s each
+       visible for ~1.4s, fade 0.4s in + 0.4s out */
+    .eyebrow-item:nth-child(1) { animation: eyeFade 10s 0s    infinite; }
+    .eyebrow-item:nth-child(2) { animation: eyeFade 10s 2.5s  infinite; }
+    .eyebrow-item:nth-child(3) { animation: eyeFade 10s 5s    infinite; }
+    .eyebrow-item:nth-child(4) { animation: eyeFade 10s 7.5s  infinite; }
+
+    @keyframes eyeFade {
+      0%    { opacity: 0; transform: translateY(5px);  }
+      8%    { opacity: 1; transform: translateY(0);    }
+      17%   { opacity: 1; transform: translateY(0);    }
+      25%   { opacity: 0; transform: translateY(-5px); }
+      100%  { opacity: 0; transform: translateY(-5px); }
+    }
+
+    /* ── Why grid ── */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -70,7 +80,7 @@
       margin-bottom: 10px;
     }
     .why-card h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 8px; }
-    .why-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+    .why-card p  { color: var(--muted);   font-size: 0.9rem;  line-height: 1.55; }
   </style>
 </head>
 <body>
@@ -100,6 +110,7 @@
       <div class="hero-shell">
         <div class="hero-grid">
           <div class="hero-left">
+
             <div class="eyebrow-rotator anim-fadeup d1">
               <div class="eyebrow-dot"></div>
               <div class="eyebrow-track">
@@ -109,12 +120,14 @@
                 <span class="eyebrow-item">Personal Branding</span>
               </div>
             </div>
+
             <h1 class="anim-fadeup d2">B2B outreach that books real meetings.</h1>
             <p class="anim-fadeup d3">BLAPE builds done-for-you outreach systems for B2B companies and consultants who are tired of posting content and hoping. We fill your calendar with qualified calls.</p>
             <div class="btn-container anim-fadeup d4">
               <a href="contact.html" class="btn btn-primary">Book a Free Call</a>
               <a href="#services" class="btn btn-ghost-white">See What We Do</a>
             </div>
+
           </div>
           <div class="hero-right">
             <div class="logo-circle--hero">
