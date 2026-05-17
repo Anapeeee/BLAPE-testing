@@ -1,165 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About BLAPE — Enterprise Email & LinkedIn Solutions</title>
-  <meta name="description" content="Learn about BLAPE's mission to help B2B enterprises master cold email, LinkedIn, and professional branding for B2B growth.">
-  <meta name="keywords" content="about, BLAPE, B2B, enterprise, email marketing, LinkedIn">
-  <meta property="og:title" content="About BLAPE — Enterprise Email & LinkedIn Solutions">
-  <meta property="og:description" content="We help B2B enterprises scale through strategic email and LinkedIn mastery.">
-  <meta property="og:url" content="https://your-domain.com/about.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="icon" type="image/png" href="monkey-logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | BLAPE</title>
+  <meta name="description" content="BLAPE is a B2B outreach agency built by people who ran outreach themselves. We know what works because we have done it." />
+  <link rel="canonical" href="https://apecstudio.github.io/BLAPE-testing/about.html" />
+  <link rel="icon" href="monkey-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .about-intro {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 52px;
+      align-items: center;
+      padding: 60px 0 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    .about-intro h1 {
+      color: var(--primary);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .about-intro p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .about-visual {
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #193d63 0%, #2b6f9c 55%, #77cae7 100%);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+    }
+    .about-visual-inner {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: white;
+      border: 6px solid white;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.2);
+      overflow: hidden;
+      display: grid; place-items: center;
+    }
+    .about-visual-inner img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transform: scale(1.42);
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .value-card {
+      padding: 28px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      transition: all 0.3s ease;
+    }
+    .value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .value-card h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 10px; }
+    .value-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+    @media (max-width: 820px) {
+      .about-intro {
+        grid-template-columns: 1fr;
+        padding: 40px 0 32px;
+        gap: 28px;
+      }
+      .about-visual { max-width: 280px; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container">
-    <div class="header-inner">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
       <a href="index.html" class="brand">
         <div class="logo-circle">
-          <img src="monkey-logo.png" alt="BLAPE Logo">
+          <img src="monkey-logo.png" alt="BLAPE logo" />
         </div>
         <span>BLAPE</span>
       </a>
-      <nav class="nav">
+      <nav class="nav" id="nav-menu" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services/linkedin-optimization.html">Services</a>
+        <a href="index.html#services">Services</a>
+        <a href="about.html" class="active">About</a>
         <a href="resources.html">Resources</a>
-        <a href="contact.html" class="nav-cta">Contact</a>
+        <a href="contact.html" class="nav-cta">Book a Call</a>
       </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container">
-    <h1>About BLAPE</h1>
-    <p>We're a team of B2B growth specialists dedicated to helping enterprises master cold email, LinkedIn optimization, and professional branding.</p>
-  </div>
-</section>
-
-<!-- MISSION SECTION -->
-<section>
-  <div class="container">
-    <div class="section-head centered">
-      <div class="section-kicker">Our Mission</div>
-      <h2>Empower B2B Enterprises to Dominate Digital Outreach</h2>
-      <p>At BLAPE, we believe that every enterprise deserves access to world-class strategies for email deliverability, LinkedIn presence, and personal branding. We make it simple, strategic, and scalable.</p>
-    </div>
-
-    <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
-      <div style="padding: 32px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line);">
-        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 12px;">📊 Data-Driven</h3>
-        <p style="color: var(--muted); line-height: 1.6;">Every strategy we deploy is backed by real data, A/B testing, and proven frameworks that work across industries.</p>
-      </div>
-      <div style="padding: 32px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line);">
-        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 12px;">🎯 B2B Focused</h3>
-        <p style="color: var(--muted); line-height: 1.6;">We specialize exclusively in B2B and enterprise solutions. We understand decision-makers, long sales cycles, and complex deal structures.</p>
-      </div>
-      <div style="padding: 32px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line);">
-        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 12px;">🚀 Scalable</h3>
-        <p style="color: var(--muted); line-height: 1.6;">Whether you're scaling a team of 5 or 500, our frameworks grow with you without losing effectiveness.</p>
+  <!-- ABOUT INTRO -->
+  <section>
+    <div class="container">
+      <div class="about-intro">
+        <div>
+          <span class="section-kicker anim-fadeup d1">About BLAPE</span>
+          <h1 class="anim-fadeup d2">We built this because we needed it ourselves.</h1>
+          <p class="anim-fadeup d3">BLAPE started as an internal outreach system for a B2B consulting business. We needed a way to generate meetings without posting daily content, running ads or paying for introductions. So we built one.</p>
+          <p class="anim-fadeup d3">The system worked well enough that other businesses started asking us to build it for them. That is what BLAPE is now.</p>
+          <p class="anim-fadeup d4">We are not a traditional agency. We do not sell retainers for things you do not need. We build systems, hand them over, and stay involved as long as we are useful.</p>
+          <div style="margin-top:24px;" class="anim-fadeup d5">
+            <a href="contact.html" class="btn btn-dark">Work With Us</a>
+          </div>
+        </div>
+        <div class="about-visual anim-fadeup d2">
+          <div class="about-visual-inner">
+            <img src="monkey-logo.png" alt="BLAPE" />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY CHOOSE BLAPE -->
-<section style="background: rgba(169, 140, 240, 0.04); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-  <div class="container">
-    <div class="section-head centered">
-      <h2>Why Choose BLAPE?</h2>
-    </div>
-
-    <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
-      <div>
-        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
-        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Enterprise-Grade Results</h4>
-        <p style="color: var(--muted); font-size: 0.95rem;">Our clients average 42% improvement in email open rates and 3.2x increase in LinkedIn profile engagement.</p>
+  <!-- VALUES -->
+  <section style="background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="section-kicker">How We Work</span>
+        <h2>What you can expect from us</h2>
+        <p>We are direct, technical and focused on one thing: outcomes.</p>
       </div>
-      <div>
-        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
-        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Real-World Experience</h4>
-        <p style="color: var(--muted); font-size: 0.95rem;">We've worked with 100+ B2B companies across SaaS, fintech, consulting, and professional services.</p>
-      </div>
-      <div>
-        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
-        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Ongoing Support</h4>
-        <p style="color: var(--muted); font-size: 0.95rem;">You're not left alone. We provide continuous optimization, monitoring, and strategic guidance.</p>
-      </div>
-      <div>
-        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
-        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Transparent Methodology</h4>
-        <p style="color: var(--muted); font-size: 0.95rem;">We share exactly what we're doing, why we're doing it, and how to measure success.</p>
-      </div>
-      <div>
-        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
-        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Custom Strategies</h4>
-        <p style="color: var(--muted); font-size: 0.95rem;">No cookie-cutter solutions. We audit, analyze, and customize everything for your unique business.</p>
-      </div>
-      <div>
-        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
-        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Compliance First</h4>
-        <p style="color: var(--muted); font-size: 0.95rem;">All strategies follow GDPR, CAN-SPAM, and global email regulations. Clean sender reputation guaranteed.</p>
+      <div class="values-grid">
+        <div class="value-card anim-fadeup d1">
+          <h3>Honest before polite</h3>
+          <p>If your current setup is broken, we will tell you clearly — not soften it into a sales pitch. You deserve to know the truth before spending money.</p>
+        </div>
+        <div class="value-card anim-fadeup d2">
+          <h3>Technical depth matters</h3>
+          <p>Most outreach agencies do not understand deliverability, DNS records or sending infrastructure. We started there. It is the foundation everything else is built on.</p>
+        </div>
+        <div class="value-card anim-fadeup d3">
+          <h3>Speed without corners cut</h3>
+          <p>We move fast. Most campaigns go live within 72 hours of sign-off. Fast does not mean careless — it means we have done this enough to be efficient.</p>
+        </div>
+        <div class="value-card anim-fadeup d4">
+          <h3>Systems over one-offs</h3>
+          <p>We build things that keep working after we hand them over. The goal is not dependency — it is a machine you can run yourself if you need to.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA SECTION -->
-<section>
-  <div class="container">
-    <div style="text-align: center; padding: 40px; border-radius: 24px; background: var(--surface); border: 1px solid var(--line);">
-      <h2 style="color: var(--primary); margin-bottom: 12px;">Ready to Transform Your B2B Outreach?</h2>
-      <p style="color: var(--muted); margin-bottom: 24px; max-width: 60ch; margin-left: auto; margin-right: auto;">Let's discuss how BLAPE can help your enterprise scale through strategic email and LinkedIn mastery.</p>
-      <a href="contact.html" class="btn btn-dark">Book a Strategy Call</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h3>Company</h3>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h3>Services</h3>
-        <a href="services/linkedin-optimization.html">LinkedIn Optimization</a>
-        <a href="services/cold-email-outreach.html">Cold Email Outreach</a>
-        <a href="services/email-deliverability.html">Email Deliverability</a>
-        <a href="services/cv-personal-branding.html">CV & Personal Branding</a>
-      </div>
-      <div class="footer-col">
-        <h3>Resources</h3>
-        <a href="resources.html">Blog & Guides</a>
-        <a href="sitemap.xml">Sitemap</a>
-        <a href="robots.txt">Robots.txt</a>
-      </div>
-      <div class="footer-col">
-        <h3>Legal</h3>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;padding:40px 0;">
+        <span class="section-kicker">Ready to talk?</span>
+        <h2 style="color:var(--primary);font-size:clamp(1.8rem,3.5vw,2.6rem);letter-spacing:-0.03em;margin-bottom:14px;">Book a free 30-minute call</h2>
+        <p style="color:var(--muted);margin-bottom:28px;max-width:48ch;margin-left:auto;margin-right:auto;">We will spend 30 minutes understanding your situation and tell you honestly whether and how we can help.</p>
+        <a href="contact.html" class="purple-pop">Book Your Free Call</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 BLAPE. All rights reserved. Enterprise B2B Growth Solutions.</p>
-    </div>
-  </div>
-</footer>
+  </section>
 
-<script src="assets/js/main.js"></script>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>BLAPE</h3>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;line-height:1.6;">B2B outreach systems that generate meetings, not noise.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <a href="services/linkedin-optimization.html">LinkedIn Optimisation</a>
+          <a href="services/cold-email-outreach.html">Cold Email Outreach</a>
+          <a href="services/email-deliverability.html">Email Deliverability</a>
+          <a href="services/cv-personal-branding.html">CV &amp; Personal Branding</a>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <a href="about.html">About</a>
+          <a href="resources.html">Resources</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <a href="mailto:info@apecstudio.com">info@apecstudio.com</a>
+          <a href="contact.html">Book a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 BLAPE. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
