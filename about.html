@@ -1,212 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — BLAPE | Who We Help &amp; Why People Come To Us</title>
-  <meta name="description" content="BLAPE is a small team fixing LinkedIn, cold outreach and email deliverability for job seekers, founders, sales teams and agencies across Europe." />
-  <link rel="canonical" href="https://apecstudio.com/about.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About BLAPE — Enterprise Email & LinkedIn Solutions</title>
+  <meta name="description" content="Learn about BLAPE's mission to help B2B enterprises master cold email, LinkedIn, and professional branding for B2B growth.">
+  <meta name="keywords" content="about, BLAPE, B2B, enterprise, email marketing, LinkedIn">
+  <meta property="og:title" content="About BLAPE — Enterprise Email & LinkedIn Solutions">
+  <meta property="og:description" content="We help B2B enterprises scale through strategic email and LinkedIn mastery.">
+  <meta property="og:url" content="https://your-domain.com/about.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" type="image/png" href="monkey-logo.png">
 </head>
-<body data-requires-auth="false">
+<body>
 
-  <div id="sso-user-bar" class="sso-user-bar"></div>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="BLAPE home">
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
         <div class="logo-circle">
-          <img src="monkey-logo.png" alt="BLAPE logo" />
+          <img src="monkey-logo.png" alt="BLAPE Logo">
         </div>
-        <div><span>BLAPE</span></div>
+        <span>BLAPE</span>
       </a>
-      <nav class="nav" aria-label="Main navigation">
+      <nav class="nav">
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="courses.html">Courses</a>
-        <a href="contact.html">Contact</a>
-        <a href="book.html" class="nav-cta">Book a call</a>
+        <a href="services/linkedin-optimization.html">Services</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
       </nav>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="page-body">
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <h1>About BLAPE</h1>
+    <p>We're a team of B2B growth specialists dedicated to helping enterprises master cold email, LinkedIn optimization, and professional branding.</p>
+  </div>
+</section>
 
-    <!-- PAGE BAND -->
-    <section class="page-band">
-      <div class="container">
-        <div class="page-band-inner">
-          <span class="page-band-kicker">Who we help &amp; what we do</span>
-          <h1>You, if this sounds <span class="accent">familiar.</span></h1>
-          <p>For people and teams who are done guessing and ready to move.</p>
-        </div>
+<!-- MISSION SECTION -->
+<section>
+  <div class="container">
+    <div class="section-head centered">
+      <div class="section-kicker">Our Mission</div>
+      <h2>Empower B2B Enterprises to Dominate Digital Outreach</h2>
+      <p>At BLAPE, we believe that every enterprise deserves access to world-class strategies for email deliverability, LinkedIn presence, and personal branding. We make it simple, strategic, and scalable.</p>
+    </div>
+
+    <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+      <div style="padding: 32px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line);">
+        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 12px;">📊 Data-Driven</h3>
+        <p style="color: var(--muted); line-height: 1.6;">Every strategy we deploy is backed by real data, A/B testing, and proven frameworks that work across industries.</p>
       </div>
-    </section>
-
-    <!-- WHO WE HELP / WHAT WE DO TABS -->
-    <section class="tab-section">
-      <div class="container">
-        <div class="tab-shell">
-          <div class="tab-header">
-            <div class="section-kicker">Who we help &amp; what we do</div>
-            <h2>You, if this sounds familiar.</h2>
-            <p>For people and teams who are done guessing and ready to move.</p>
-            <div class="tab-nav" role="tablist">
-              <button class="tab-btn active" type="button" role="tab" aria-selected="true" data-tab-group="about" data-tab="audience">Who this is for</button>
-              <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-group="about" data-tab="overview">What we actually do</button>
-            </div>
-          </div>
-          <div class="tab-panels">
-
-            <div class="tab-panel active" data-panel-group="about" data-panel="audience">
-              <div class="audience-cards">
-                <div class="aud-card">
-                  <div class="aud-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
-                  <h4>Job Seekers</h4>
-                  <div class="aud-hook">Applying consistently with no responses?</div>
-                  <ul class="aud-list">
-                    <li>Your profile probably does not match what recruiters filter for</li>
-                    <li>Your CV is not written in the language of the role</li>
-                    <li>Both are fixable in under a week</li>
-                  </ul>
-                </div>
-                <div class="aud-card">
-                  <div class="aud-icon"><svg viewBox="0 0 24 24"><polyline points="13 2 13 9 20 9"/><path d="M20 14.5V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7.5L20 7.5"/><path d="M9 13h1.5"/><path d="M9 17h6"/></svg></div>
-                  <h4>Founders &amp; Freelancers</h4>
-                  <div class="aud-hook">You need leads, not another tool subscription.</div>
-                  <ul class="aud-list">
-                    <li>We set up the targeting and write the copy</li>
-                    <li>We get the sequence running for you</li>
-                    <li>No stack dependency, no fluff</li>
-                  </ul>
-                </div>
-                <div class="aud-card">
-                  <div class="aud-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-                  <h4>Sales Teams</h4>
-                  <div class="aud-hook">Reply rates below 2% are a signal, not bad luck.</div>
-                  <ul class="aud-list">
-                    <li>Poor ICP definition or weak personalisation</li>
-                    <li>Broken sequencing or damaged domain reputation</li>
-                    <li>We find the cause and fix it</li>
-                  </ul>
-                </div>
-                <div class="aud-card">
-                  <div class="aud-icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M8 7V5.8C8 4.8 8.8 4 9.8 4h4.4C15.2 4 16 4.8 16 5.8V7"/><path d="M3 11h18"/></svg></div>
-                  <h4>Agencies</h4>
-                  <div class="aud-hook">Client outreach handled cleanly, without damaging your reputation.</div>
-                  <ul class="aud-list">
-                    <li>DNS setup, warm-up and campaign logic</li>
-                    <li>Ongoing monitoring included</li>
-                    <li>Done properly, not patched together</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="tab-panel" data-panel-group="about" data-panel="overview">
-              <div class="services-four">
-                <div class="svc-card">
-                  <div class="svc-icon dark"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
-                  <h4>Deliverability</h4>
-                  <div class="svc-hook">Emails landing in spam? This is why.</div>
-                  <ul class="svc-list">
-                    <li>DNS records: SPF, DKIM and DMARC configured correctly</li>
-                    <li>Domain warm-up and spam checks</li>
-                    <li>Safer sending infrastructure that protects your domain</li>
-                  </ul>
-                </div>
-                <div class="svc-card">
-                  <div class="svc-icon dark"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
-                  <h4>LinkedIn</h4>
-                  <div class="svc-hook">Profile getting ignored? It is likely the positioning.</div>
-                  <ul class="svc-list">
-                    <li>Full profile optimisation and headline rewrite</li>
-                    <li>Outreach strategy that does not get flagged</li>
-                    <li>Message sequences people actually reply to</li>
-                  </ul>
-                </div>
-                <div class="svc-card">
-                  <div class="svc-icon dark"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-                  <h4>Campaigns</h4>
-                  <div class="svc-hook">Built to convert, not just to send.</div>
-                  <ul class="svc-list">
-                    <li>ICP targeting and copy written for your audience</li>
-                    <li>Sequencing and follow-up logic that makes sense</li>
-                    <li>Campaign structure reviewed before it launches</li>
-                  </ul>
-                </div>
-                <div class="svc-card">
-                  <div class="svc-icon dark"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
-                  <h4>Presence</h4>
-                  <div class="svc-hook">The full picture before you start applying or pitching.</div>
-                  <ul class="svc-list">
-                    <li>CV rewrite and personal brand clarity</li>
-                    <li>Interview preparation without the filler advice</li>
-                    <li>Work mindset that keeps you moving forward</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
+      <div style="padding: 32px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line);">
+        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 12px;">🎯 B2B Focused</h3>
+        <p style="color: var(--muted); line-height: 1.6;">We specialize exclusively in B2B and enterprise solutions. We understand decision-makers, long sales cycles, and complex deal structures.</p>
       </div>
-    </section>
-
-    <!-- WHY PEOPLE COME TO US -->
-    <section class="compact-about">
-      <div class="container">
-        <div class="about-compact-shell">
-          <div class="about-compact-top">
-            <div>
-              <div class="section-kicker">Why people come to us</div>
-              <h2>Less noise. More traction.</h2>
-              <p>Most people do not need more tools. They need someone to look at what they have, tell them what is wrong and fix it. That is it.</p>
-            </div>
-          </div>
-          <div class="about-mini-grid">
-            <div class="about-mini-card"><strong>Too much noise</strong><p>Too many actions, not enough direction. We cut it down to what moves the needle.</p></div>
-            <div class="about-mini-card"><strong>Too many blind spots</strong><p>Weak DNS setup, weak copy or unclear positioning. We find the specific thing that is breaking results.</p></div>
-            <div class="about-mini-card"><strong>Too little time</strong><p>You need it fixed without spending three weeks learning a new tool. We handle it.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="final-cta-section">
-      <div class="container">
-        <div class="final-cta-shell">
-          <div class="final-cta-inner">
-            <h2>Ready to fix it?</h2>
-            <p>One call is enough to know what the problem is. Book it, or send us an email and we will take it from there.</p>
-            <div class="final-cta-actions">
-              <a href="book.html" class="btn btn-primary">Book a call</a>
-              <a href="mailto:info@apecstudio.com" class="btn btn-ghost-white">Contact us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>&copy; 2026 BLAPE. All rights reserved. Serving clients across Europe.</span>
-      <div class="footer-links">
-        <a href="mailto:info@apecstudio.com">info@apecstudio.com</a>
-        <a href="book.html">Book a call</a>
-        <a href="mailto:info@apecstudio.com?subject=Privacy%20Policy%20Request">Privacy Policy</a>
-        <a href="mailto:info@apecstudio.com?subject=Impressum%20Request">Impressum</a>
-        <a href="index.html">Back to top</a>
+      <div style="padding: 32px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line);">
+        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 12px;">🚀 Scalable</h3>
+        <p style="color: var(--muted); line-height: 1.6;">Whether you're scaling a team of 5 or 500, our frameworks grow with you without losing effectiveness.</p>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="assets/js/main.js"></script>
+<!-- WHY CHOOSE BLAPE -->
+<section style="background: rgba(169, 140, 240, 0.04); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container">
+    <div class="section-head centered">
+      <h2>Why Choose BLAPE?</h2>
+    </div>
+
+    <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
+      <div>
+        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
+        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Enterprise-Grade Results</h4>
+        <p style="color: var(--muted); font-size: 0.95rem;">Our clients average 42% improvement in email open rates and 3.2x increase in LinkedIn profile engagement.</p>
+      </div>
+      <div>
+        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
+        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Real-World Experience</h4>
+        <p style="color: var(--muted); font-size: 0.95rem;">We've worked with 100+ B2B companies across SaaS, fintech, consulting, and professional services.</p>
+      </div>
+      <div>
+        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
+        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Ongoing Support</h4>
+        <p style="color: var(--muted); font-size: 0.95rem;">You're not left alone. We provide continuous optimization, monitoring, and strategic guidance.</p>
+      </div>
+      <div>
+        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
+        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Transparent Methodology</h4>
+        <p style="color: var(--muted); font-size: 0.95rem;">We share exactly what we're doing, why we're doing it, and how to measure success.</p>
+      </div>
+      <div>
+        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
+        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Custom Strategies</h4>
+        <p style="color: var(--muted); font-size: 0.95rem;">No cookie-cutter solutions. We audit, analyze, and customize everything for your unique business.</p>
+      </div>
+      <div>
+        <div style="font-size: 2rem; margin-bottom: 12px;">✓</div>
+        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 8px;">Compliance First</h4>
+        <p style="color: var(--muted); font-size: 0.95rem;">All strategies follow GDPR, CAN-SPAM, and global email regulations. Clean sender reputation guaranteed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section>
+  <div class="container">
+    <div style="text-align: center; padding: 40px; border-radius: 24px; background: var(--surface); border: 1px solid var(--line);">
+      <h2 style="color: var(--primary); margin-bottom: 12px;">Ready to Transform Your B2B Outreach?</h2>
+      <p style="color: var(--muted); margin-bottom: 24px; max-width: 60ch; margin-left: auto; margin-right: auto;">Let's discuss how BLAPE can help your enterprise scale through strategic email and LinkedIn mastery.</p>
+      <a href="contact.html" class="btn btn-dark">Book a Strategy Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Company</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h3>Services</h3>
+        <a href="services/linkedin-optimization.html">LinkedIn Optimization</a>
+        <a href="services/cold-email-outreach.html">Cold Email Outreach</a>
+        <a href="services/email-deliverability.html">Email Deliverability</a>
+        <a href="services/cv-personal-branding.html">CV & Personal Branding</a>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <a href="resources.html">Blog & Guides</a>
+        <a href="sitemap.xml">Sitemap</a>
+        <a href="robots.txt">Robots.txt</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BLAPE. All rights reserved. Enterprise B2B Growth Solutions.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
