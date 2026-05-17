@@ -12,13 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
+
+    /* ─── EYEBROW ROTATOR ─────────────────────────────────────── */
     @keyframes rotateFade {
-      0%   { opacity: 0; transform: translateY(6px);  }
-      10%  { opacity: 1; transform: translateY(0);    }
-      22%  { opacity: 1; transform: translateY(0);    }
-      34%  { opacity: 0; transform: translateY(-6px); }
-      100% { opacity: 0; transform: translateY(-6px); }
+      0%    { opacity: 0; transform: translateY(7px);  }
+      6%    { opacity: 1; transform: translateY(0);    }
+      28%   { opacity: 1; transform: translateY(0);    }
+      36%   { opacity: 0; transform: translateY(-7px); }
+      100%  { opacity: 0; transform: translateY(-7px); }
     }
+
     .eyebrow-rotator {
       display: inline-flex;
       align-items: center;
@@ -44,13 +47,38 @@
       font-weight: 700; font-size: 0.88rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      animation: rotateFade 10s ease-in-out infinite;
+      opacity: 0;
+      animation: rotateFade 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
       white-space: nowrap;
+      will-change: opacity, transform;
     }
-    .eyebrow-item:nth-child(1) { animation-delay: 0s; }
-    .eyebrow-item:nth-child(2) { animation-delay: 2.5s; }
-    .eyebrow-item:nth-child(3) { animation-delay: 5s; }
-    .eyebrow-item:nth-child(4) { animation-delay: 7.5s; }
+    .eyebrow-item:nth-child(1) { animation-delay: 0s;    }
+    .eyebrow-item:nth-child(2) { animation-delay: 3.5s;  }
+    .eyebrow-item:nth-child(3) { animation-delay: 7s;    }
+    .eyebrow-item:nth-child(4) { animation-delay: 10.5s; }
+
+    /* ─── HERO H1 ─────────────────────────────────────────────── */
+    .hero-left h1 {
+      color: white;
+      font-size: clamp(2.8rem, 6vw, 4.4rem);
+      line-height: 1.04;
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+    }
+    .hero-left h1 .h1-dim {
+      opacity: 0.55;
+      font-weight: 700;
+    }
+    .hero-left h1 .h1-accent {
+      display: block;
+      background: linear-gradient(90deg, #ffffff 0%, #a8d8f0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── WHY GRID ────────────────────────────────────────────── */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -70,7 +98,8 @@
       margin-bottom: 10px;
     }
     .why-card h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 8px; }
-    .why-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+    .why-card p  { color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+
   </style>
 </head>
 <body>
@@ -100,6 +129,7 @@
       <div class="hero-shell">
         <div class="hero-grid">
           <div class="hero-left">
+
             <div class="eyebrow-rotator anim-fadeup d1">
               <div class="eyebrow-dot"></div>
               <div class="eyebrow-track">
@@ -109,12 +139,19 @@
                 <span class="eyebrow-item">Personal Branding</span>
               </div>
             </div>
-            <h1 class="anim-fadeup d2">B2B outreach that books real meetings.</h1>
+
+            <h1 class="anim-fadeup d2">
+              <span class="h1-dim">Don't think about it.</span>
+              <span class="h1-accent">We'll fix it.</span>
+            </h1>
+
             <p class="anim-fadeup d3">BLAPE builds done-for-you outreach systems for B2B companies and consultants who are tired of posting content and hoping. We fill your calendar with qualified calls.</p>
+
             <div class="btn-container anim-fadeup d4">
               <a href="contact.html" class="btn btn-primary">Book a Free Call</a>
               <a href="#services" class="btn btn-ghost-white">See What We Do</a>
             </div>
+
           </div>
           <div class="hero-right">
             <div class="logo-circle--hero">
