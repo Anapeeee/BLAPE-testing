@@ -12,172 +12,552 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    /* ── Eyebrow rotator ── */
-    .eyebrow-rotator {
-      display: inline-flex;
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #e8f0f7;
+      --hero-from: #1a3f65;
+      --hero-to:   #3a8fbf;
+      --accent:    #9b6dff;
+      --accent2:   #7c4dff;
+      --white:     #ffffff;
+      --muted:     rgba(255,255,255,0.72);
+      --card-bg:   rgba(255,255,255,0.13);
+      --card-border: rgba(255,255,255,0.22);
+      --radius:    18px;
+      --radius-sm: 10px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      padding: 0 32px;
+      height: 62px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .logo-circle {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: #dce8f2;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .logo-circle img { width: 28px; height: 28px; object-fit: contain; }
+    .brand span {
+      font-size: 1.15rem; font-weight: 800;
+      color: #1a3f65; letter-spacing: -0.02em;
+    }
+    .nav {
+      display: flex; align-items: center; gap: 6px;
+    }
+    .nav a {
+      font-size: 0.9rem; font-weight: 500;
+      color: #334;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 8px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .nav a:hover { background: #f0f4f8; color: #1a3f65; }
+    .nav a.nav-cta {
+      background: #1a3f65;
+      color: white;
+      font-weight: 700;
+      border-radius: 50px;
+      padding: 9px 22px;
+    }
+    .nav a.nav-cta:hover { background: #163256; }
+
+    /* ── Hero wrapper ── */
+    .hero-wrapper {
+      padding-top: 62px;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-shell {
+      margin: 32px auto;
+      max-width: 980px;
+      width: calc(100% - 48px);
+      border-radius: 28px;
+      background: linear-gradient(145deg, #1a3f65 0%, #2472a4 50%, #4da8d4 100%);
+      padding: 60px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      min-height: 32px;
+      box-shadow: 0 24px 80px rgba(20,50,90,0.28);
+    }
+
+    /* ── Hero Left ── */
+    .hero-left { display: flex; flex-direction: column; gap: 0; }
+
+    .eyebrow-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50px;
+      padding: 7px 16px;
+      margin-bottom: 28px;
+      width: fit-content;
     }
     .eyebrow-dot {
-      width: 8px; height: 8px;
+      width: 7px; height: 7px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.8);
       flex-shrink: 0;
     }
-    .eyebrow-track {
-      position: relative;
-      height: 22px;
-      overflow: hidden;
-      min-width: 240px;
+    .eyebrow-pill span {
+      font-size: 0.82rem; font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.02em;
     }
-    .eyebrow-item {
-      position: absolute;
-      left: 0; top: 0;
-      color: rgba(255,255,255,0.92);
+
+    .hero-heading {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.6rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero-heading .accent {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 0.97rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 22px;
+      max-width: 36ch;
+    }
+
+    .tagline-pill {
+      display: inline-block;
+      background: rgba(155,109,255,0.25);
+      border: 1px solid rgba(155,109,255,0.4);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.88rem;
       font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      opacity: 0;
-      white-space: nowrap;
-      will-change: opacity, transform;
+      color: #c8aaff;
+      letter-spacing: 0.01em;
+      margin-bottom: 32px;
     }
 
-    /* Each item: 10s total cycle, 4 items = 2.5s each
-       visible for ~1.4s, fade 0.4s in + 0.4s out */
-    .eyebrow-item:nth-child(1) { animation: eyeFade 10s 0s    infinite; }
-    .eyebrow-item:nth-child(2) { animation: eyeFade 10s 2.5s  infinite; }
-    .eyebrow-item:nth-child(3) { animation: eyeFade 10s 5s    infinite; }
-    .eyebrow-item:nth-child(4) { animation: eyeFade 10s 7.5s  infinite; }
+    .hero-btns {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .btn-book {
+      background: white;
+      color: #1a3f65;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 13px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.18s, box-shadow 0.18s;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    }
+    .btn-book:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+    .btn-contact {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 13px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: background 0.18s;
+    }
+    .btn-contact:hover { background: rgba(255,255,255,0.2); }
 
-    @keyframes eyeFade {
-      0%    { opacity: 0; transform: translateY(5px);  }
-      8%    { opacity: 1; transform: translateY(0);    }
-      17%   { opacity: 1; transform: translateY(0);    }
-      25%   { opacity: 0; transform: translateY(-5px); }
-      100%  { opacity: 0; transform: translateY(-5px); }
+    /* ── Hero Right: Info Card ── */
+    .hero-right { display: flex; flex-direction: column; gap: 12px; }
+
+    .brand-card {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .brand-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .brand-avatar img { width: 36px; height: 36px; object-fit: contain; }
+    .brand-card-text strong {
+      display: block;
+      font-size: 1rem; font-weight: 800; color: white;
+    }
+    .brand-card-text span {
+      font-size: 0.82rem; color: var(--muted);
     }
 
-    /* ── Why grid ── */
+    .problem-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      display: flex; align-items: flex-start; gap: 13px;
+      transition: background 0.2s;
+    }
+    .problem-card:hover { background: rgba(255,255,255,0.17); }
+    .problem-icon {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .problem-icon svg { width: 17px; height: 17px; stroke: rgba(255,255,255,0.85); }
+    .problem-card strong {
+      display: block;
+      font-size: 0.88rem; font-weight: 700; color: white;
+      margin-bottom: 3px;
+    }
+    .problem-card p {
+      font-size: 0.8rem; color: var(--muted); line-height: 1.45;
+    }
+
+    /* ── Services Section ── */
+    .services-section {
+      background: var(--bg);
+      padding: 80px 24px;
+    }
+    .section-inner { max-width: 980px; margin: 0 auto; }
+    .section-head {
+      text-align: center; margin-bottom: 40px;
+    }
+    .section-kicker {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #2472a4;
+      background: rgba(36,114,164,0.1);
+      border-radius: 50px; padding: 5px 14px;
+      margin-bottom: 12px;
+    }
+    .section-head h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800; color: #1a3f65;
+      letter-spacing: -0.03em; margin-bottom: 10px;
+    }
+    .section-head p { color: #667; font-size: 0.97rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+    .service-card {
+      background: white;
+      border: 1px solid #dce8f2;
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(26,63,101,0.12);
+    }
+    .service-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(36,114,164,0.08);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-size: 1rem; font-weight: 700; color: #1a3f65;
+      margin-bottom: 8px;
+    }
+    .service-card p { font-size: 0.86rem; color: #556; line-height: 1.55; margin-bottom: 14px; }
+    .learn-more {
+      font-size: 0.84rem; font-weight: 600; color: #2472a4;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .learn-more:hover { color: #1a3f65; }
+
+    /* ── Why BLAPE ── */
+    .why-section {
+      background: #dce8f2;
+      border-top: 1px solid #ccdcec;
+      border-bottom: 1px solid #ccdcec;
+      padding: 80px 24px;
+    }
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 36px;
     }
     .why-card {
-      padding: 28px;
+      background: white;
+      border: 1px solid #ccdcec;
       border-radius: 20px;
-      background: var(--surface);
-      border: 1px solid var(--line);
+      padding: 28px 24px;
     }
     .why-num {
       font-size: 2rem; font-weight: 900;
-      color: rgba(47,121,168,0.2);
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
+      color: rgba(36,114,164,0.18);
+      letter-spacing: -0.04em; margin-bottom: 12px;
     }
-    .why-card h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 8px; }
-    .why-card p  { color: var(--muted);   font-size: 0.9rem;  line-height: 1.55; }
+    .why-card h3 { font-size: 1rem; font-weight: 700; color: #1a3f65; margin-bottom: 8px; }
+    .why-card p { font-size: 0.87rem; color: #556; line-height: 1.55; }
+
+    /* ── CTA Strip ── */
+    .cta-section { background: var(--bg); padding: 80px 24px; }
+    .cta-box {
+      max-width: 980px; margin: 0 auto;
+      padding: 56px 48px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #1a3f65 0%, #2472a4 55%, #4da8d4 100%);
+      text-align: center; color: white;
+      box-shadow: 0 20px 60px rgba(26,63,101,0.2);
+    }
+    .cta-kicker {
+      font-size: 0.75rem; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      display: block; margin-bottom: 14px;
+    }
+    .cta-box h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800; letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+    .cta-box p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 30px;
+      max-width: 50ch; margin-left: auto; margin-right: auto;
+      font-size: 0.97rem;
+    }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: #111c2a;
+      color: white;
+      padding: 56px 24px 28px;
+    }
+    .footer-grid {
+      max-width: 980px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-col h3 {
+      font-size: 0.9rem; font-weight: 700;
+      margin-bottom: 14px; color: white;
+    }
+    .footer-col p { color: rgba(255,255,255,0.55); font-size: 0.87rem; line-height: 1.6; }
+    .footer-col a {
+      display: block; color: rgba(255,255,255,0.55);
+      text-decoration: none; font-size: 0.87rem;
+      margin-bottom: 8px; transition: color 0.15s;
+    }
+    .footer-col a:hover { color: white; }
+    .footer-bottom {
+      max-width: 980px; margin: 0 auto;
+      padding-top: 24px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .anim { animation: fadeUp 0.6s ease both; }
+    .d1 { animation-delay: 0.05s; }
+    .d2 { animation-delay: 0.15s; }
+    .d3 { animation-delay: 0.25s; }
+    .d4 { animation-delay: 0.35s; }
+    .d5 { animation-delay: 0.45s; }
+    .d6 { animation-delay: 0.55s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .hero-shell {
+        grid-template-columns: 1fr;
+        padding: 40px 28px;
+      }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav a:not(.nav-cta) { display: none; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <div class="logo-circle">
-          <img src="blape-outreach-linkedin-branding.svg" alt="BLAPE logo" />
-        </div>
-        <span>BLAPE</span>
-      </a>
-      <nav class="nav" id="nav-menu" aria-label="Main navigation">
-        <a href="index.html" class="active">Home</a>
-        <a href="#services">Services</a>
-        <a href="blog.html">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="nav-cta">Book a Call</a>
-      </nav>
-    </div>
+    <a href="index.html" class="brand">
+      <div class="logo-circle">
+        <img src="blape-outreach-linkedin-branding.svg" alt="BLAPE logo" />
+      </div>
+      <span>BLAPE</span>
+    </a>
+    <nav class="nav" id="nav-menu" aria-label="Main navigation">
+      <a href="about.html">About</a>
+      <a href="#services">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Book a call</a>
+    </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-shell">
-        <div class="hero-grid">
-          <div class="hero-left">
+  <div class="hero-wrapper">
+    <div class="hero-shell">
 
-            <div class="eyebrow-rotator anim-fadeup d1">
-              <div class="eyebrow-dot"></div>
-              <div class="eyebrow-track">
-                <span class="eyebrow-item">Cold Email Outreach</span>
-                <span class="eyebrow-item">LinkedIn Optimisation</span>
-                <span class="eyebrow-item">Email Deliverability</span>
-                <span class="eyebrow-item">Personal Branding</span>
-              </div>
-            </div>
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="eyebrow-pill anim d1">
+          <div class="eyebrow-dot"></div>
+          <span>LinkedIn going nowhere?</span>
+        </div>
 
-            <h1 class="anim-fadeup d2">B2B outreach that books real meetings.</h1>
-            <p class="anim-fadeup d3">BLAPE builds done-for-you outreach systems for B2B companies and consultants who are tired of posting content and hoping. We fill your calendar with qualified calls.</p>
-            <div class="btn-container anim-fadeup d4">
-              <a href="contact.html" class="btn btn-primary">Book a Free Call</a>
-              <a href="#services" class="btn btn-ghost-white">See What We Do</a>
-            </div>
+        <h1 class="hero-heading anim d2">
+          Don't think<br>about it.<br>
+          <span class="accent">We'll fix it.</span>
+        </h1>
 
+        <p class="hero-sub anim d3">
+          A small team fixing LinkedIn, cold outreach and email deliverability for people who want results.
+        </p>
+
+        <div class="tagline-pill anim d4">Jobs. Leads. Deliverability.</div>
+
+        <div class="hero-btns anim d5">
+          <a href="contact.html" class="btn-book">Book a call</a>
+          <a href="contact.html" class="btn-contact">Contact us</a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+        <div class="brand-card anim d2">
+          <div class="brand-avatar">
+            <img src="blape-outreach-linkedin-branding.svg" alt="BLAPE" />
           </div>
-          <div class="hero-right">
-            <div class="logo-circle--hero">
-              <img src="blape-outreach-linkedin-branding.svg" alt="BLAPE" />
-            </div>
+          <div class="brand-card-text">
+            <strong>BLAPE</strong>
+            <span>We fix the parts everyone hates doing</span>
+          </div>
+        </div>
+
+        <div class="problem-card anim d3">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Can't get a job?</strong>
+            <p>We build your professional presence online. LinkedIn, CV and work mindset.</p>
+          </div>
+        </div>
+
+        <div class="problem-card anim d4">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Can't get leads?</strong>
+            <p>We build the targeting, messaging and system behind your outreach.</p>
+          </div>
+        </div>
+
+        <div class="problem-card anim d5">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Don't want to deal with any of it?</strong>
+            <p>Good. We'll guide you through it or do it for you.</p>
           </div>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
 
   <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="section-head centered">
+  <section id="services" class="services-section">
+    <div class="section-inner">
+      <div class="section-head">
         <span class="section-kicker">What We Do</span>
         <h2>Four ways we generate meetings for you</h2>
         <p>Every service is built around one goal: getting qualified decision-makers on a call with you.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card anim-fadeup d1">
+        <div class="service-card">
           <div class="service-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-2)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </div>
           <h3>LinkedIn Optimisation</h3>
-          <p>We rewrite your entire LinkedIn profile so decision-makers understand your value immediately and want to connect. More views, more requests, more calls.</p>
+          <p>We rewrite your entire LinkedIn profile so decision-makers understand your value immediately and want to connect.</p>
           <a href="services/linkedin-optimization.html" class="learn-more">Learn more &rarr;</a>
         </div>
-        <div class="service-card anim-fadeup d2">
+        <div class="service-card">
           <div class="service-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-2)"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <h3>Cold Email Outreach</h3>
-          <p>Full done-for-you campaigns — from ICP definition and list building to copy, launch and reply management. You just take the calls.</p>
+          <p>Full done-for-you campaigns — from ICP definition and list building to copy, launch and reply management.</p>
           <a href="services/cold-email-outreach.html" class="learn-more">Learn more &rarr;</a>
         </div>
-        <div class="service-card anim-fadeup d3">
+        <div class="service-card">
           <div class="service-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-2)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <h3>Email Deliverability</h3>
-          <p>SPF, DKIM, DMARC, domain warm-up and blacklist monitoring — the technical infrastructure that keeps your emails out of spam and in the inbox.</p>
+          <p>SPF, DKIM, DMARC, domain warm-up and blacklist monitoring — the technical infrastructure that keeps you in the inbox.</p>
           <a href="services/email-deliverability.html" class="learn-more">Learn more &rarr;</a>
         </div>
-        <div class="service-card anim-fadeup d4">
+        <div class="service-card">
           <div class="service-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-2)"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
           <h3>CV and Personal Branding</h3>
-          <p>CVs and personal brands for senior professionals. We position you so headhunters, investors and decision-makers find you — before you even reach out.</p>
+          <p>CVs and personal brands for senior professionals. We position you so headhunters and investors find you first.</p>
           <a href="services/cv-personal-branding.html" class="learn-more">Learn more &rarr;</a>
         </div>
       </div>
@@ -185,30 +565,30 @@
   </section>
 
   <!-- WHY BLAPE -->
-  <section style="background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-    <div class="container">
-      <div class="section-head centered">
+  <section class="why-section">
+    <div class="section-inner">
+      <div class="section-head">
         <span class="section-kicker">Why BLAPE</span>
         <h2>We do not do vanity metrics</h2>
         <p>Followers, impressions and open rates are not the point. Qualified meetings are.</p>
       </div>
       <div class="why-grid">
-        <div class="why-card anim-fadeup d1">
+        <div class="why-card">
           <div class="why-num">01</div>
           <h3>Systems, not one-off campaigns</h3>
           <p>We build repeatable outreach infrastructure — not a single campaign that dies after 30 days.</p>
         </div>
-        <div class="why-card anim-fadeup d2">
+        <div class="why-card">
           <div class="why-num">02</div>
           <h3>Copy built on real data</h3>
           <p>Every email and LinkedIn message we write is tested against live reply data — not marketing theory.</p>
         </div>
-        <div class="why-card anim-fadeup d3">
+        <div class="why-card">
           <div class="why-num">03</div>
           <h3>Technical setup done properly</h3>
           <p>Most agencies skip deliverability. We start there — because none of this works if your emails land in spam.</p>
         </div>
-        <div class="why-card anim-fadeup d4">
+        <div class="why-card">
           <div class="why-num">04</div>
           <h3>No fluff. No retainers you do not need.</h3>
           <p>We tell you what you actually need. Sometimes that is a one-time fix. We will tell you that too.</p>
@@ -218,55 +598,45 @@
   </section>
 
   <!-- CTA STRIP -->
-  <section>
-    <div class="container">
-      <div style="
-        padding: 52px 48px;
-        border-radius: var(--radius-xl);
-        background: linear-gradient(135deg, #193d63 0%, #2b6f9c 55%, #77cae7 100%);
-        text-align: center;
-        color: white;
-      ">
-        <span style="display:inline-block;font-size:0.78rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:14px;">Get Started</span>
-        <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);letter-spacing:-0.03em;margin-bottom:14px;">Book a free 30-minute strategy call</h2>
-        <p style="color:rgba(255,255,255,0.82);margin-bottom:28px;max-width:50ch;margin-left:auto;margin-right:auto;">No pitch. No pressure. We will look at your current outreach and tell you honestly what is working, what is not, and what to fix first.</p>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-primary">Book a Free Call</a>
-          <a href="about.html" class="btn btn-ghost-white">About BLAPE</a>
-        </div>
+  <section class="cta-section">
+    <div class="cta-box">
+      <span class="cta-kicker">Get Started</span>
+      <h2>Book a free 30-minute strategy call</h2>
+      <p>No pitch. No pressure. We will look at your current outreach and tell you honestly what is working, what is not, and what to fix first.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-book">Book a Free Call</a>
+        <a href="about.html" class="btn-contact">About BLAPE</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h3>BLAPE</h3>
-          <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;line-height:1.6;">B2B outreach systems that generate meetings, not noise.</p>
-        </div>
-        <div class="footer-col">
-          <h3>Services</h3>
-          <a href="services/linkedin-optimization.html">LinkedIn Optimisation</a>
-          <a href="services/cold-email-outreach.html">Cold Email Outreach</a>
-          <a href="services/email-deliverability.html">Email Deliverability</a>
-          <a href="services/cv-personal-branding.html">CV &amp; Personal Branding</a>
-        </div>
-        <div class="footer-col">
-          <h3>Company</h3>
-          <a href="about.html">About</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h3>Contact</h3>
-          <a href="mailto:info@apecstudio.com">info@apecstudio.com</a>
-          <a href="contact.html">Book a Call</a>
-        </div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>BLAPE</h3>
+        <p>B2B outreach systems that generate meetings, not noise.</p>
       </div>
-      <div class="footer-bottom">&copy; 2025 BLAPE. All rights reserved.</div>
+      <div class="footer-col">
+        <h3>Services</h3>
+        <a href="services/linkedin-optimization.html">LinkedIn Optimisation</a>
+        <a href="services/cold-email-outreach.html">Cold Email Outreach</a>
+        <a href="services/email-deliverability.html">Email Deliverability</a>
+        <a href="services/cv-personal-branding.html">CV &amp; Personal Branding</a>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <a href="mailto:info@apecstudio.com">info@apecstudio.com</a>
+        <a href="contact.html">Book a Call</a>
+      </div>
     </div>
+    <div class="footer-bottom">&copy; 2025 BLAPE. All rights reserved.</div>
   </footer>
 
   <script src="assets/js/main.js"></script>
