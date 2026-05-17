@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn Profile Optimisation | BLAPE</title>
+  <meta name="description" content="We rewrite your LinkedIn profile so decision-makers stop scrolling. More profile views, more connection requests, more booked calls." />
+  <link rel="canonical" href="https://apecstudio.github.io/BLAPE-testing/services/linkedin-optimization.html" />
+  <link rel="icon" href="../monkey-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    .service-hero {
+      padding: 60px 0 50px;
+      border-bottom: 1px solid var(--line);
+    }
+    .service-hero .kicker {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(47,121,168,0.1);
+      color: var(--primary-2);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .service-hero h1 {
+      color: var(--primary);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 18px;
+      max-width: 18ch;
+    }
+    .service-hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 56ch;
+      margin-bottom: 28px;
+    }
+    .service-hero .hero-btns {
+      display: flex; gap: 14px; flex-wrap: wrap;
+    }
+    .what-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 20px;
+    }
+    .what-list { list-style: none; }
+    .what-list li {
+      display: flex;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.97rem;
+      line-height: 1.5;
+    }
+    .what-list li:last-child { border-bottom: none; }
+    .what-list li .check {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: rgba(47,121,168,0.1);
+      color: var(--primary-2);
+      display: grid; place-items: center;
+      font-weight: 900; font-size: 0.78rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .what-list li strong { display: block; color: var(--primary); margin-bottom: 4px; font-size: 1rem; }
+    .side-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      position: sticky;
+      top: 100px;
+    }
+    .side-card h3 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .side-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+    .side-card .price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+    .side-card .price-note {
+      color: var(--muted);
+      font-size: 0.83rem;
+      margin-bottom: 20px;
+    }
+    .side-card .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 20px 0;
+    }
+    .side-card ul { list-style: none; }
+    .side-card ul li {
+      display: flex; gap: 10px;
+      color: var(--muted); font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    .side-card ul li::before {
+      content: "✓";
+      color: var(--primary-2);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .process-step {
+      padding: 28px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    .step-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: rgba(47,121,168,0.18);
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: -0.04em;
+    }
+    .process-step h4 {
+      color: var(--primary);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .process-step p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+    @media (max-width: 820px) {
+      .what-grid { grid-template-columns: 1fr; gap: 28px; }
+      .side-card { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand">
+        <div class="logo-circle">
+          <img src="../monkey-logo.png" alt="BLAPE logo" />
+        </div>
+        <span>BLAPE</span>
+      </a>
+      <nav class="nav" id="nav-menu" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#services" class="active">Services</a>
+        <a href="../about.html">About</a>
+        <a href="../resources.html">Resources</a>
+        <a href="../contact.html" class="nav-cta">Book a Call</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SERVICE HERO -->
+  <section class="service-hero">
+    <div class="container">
+      <span class="kicker anim-fadeup d1">LinkedIn Optimisation</span>
+      <h1 class="anim-fadeup d2">Your LinkedIn profile is losing you deals.</h1>
+      <p class="anim-fadeup d3">We rewrite every section of your profile so that when a decision-maker lands on it, they immediately understand what you do, who you help, and why they should respond.</p>
+      <div class="hero-btns anim-fadeup d4">
+        <a href="../contact.html" class="btn btn-dark">Book a Free Call</a>
+        <a href="../resources.html" class="btn btn-outline">Free LinkedIn Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section>
+    <div class="container">
+      <div class="what-grid">
+        <div>
+          <div class="section-head">
+            <span class="section-kicker">What is included</span>
+            <h2>Full profile rewrite — every section</h2>
+            <p>We do not just fix your headline. We rebuild the entire profile with a clear positioning strategy.</p>
+          </div>
+          <ul class="what-list">
+            <li>
+              <div class="check">1</div>
+              <div><strong>Headline &amp; Tagline</strong>Your headline is the first thing people read. We write one that immediately communicates value — not job title.</div>
+            </li>
+            <li>
+              <div class="check">2</div>
+              <div><strong>About Section</strong>A compelling summary that tells your story, establishes credibility and ends with a clear call to action.</div>
+            </li>
+            <li>
+              <div class="check">3</div>
+              <div><strong>Experience Rewrite</strong>We rewrite your experience in the language of outcomes — not duties. Decision-makers care about results.</div>
+            </li>
+            <li>
+              <div class="check">4</div>
+              <div><strong>Skills &amp; Endorsements</strong>We align your skills section with what your ICP is actually searching for.</div>
+            </li>
+            <li>
+              <div class="check">5</div>
+              <div><strong>Banner &amp; Visual Identity</strong>We provide a custom banner brief so your visual identity matches your positioning.</div>
+            </li>
+            <li>
+              <div class="check">6</div>
+              <div><strong>SEO &amp; Keyword Strategy</strong>We embed the right keywords so LinkedIn surfaces your profile in the right searches.</div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="side-card anim-fadeup d2">
+            <h3>LinkedIn Profile Optimisation</h3>
+            <p>One-time profile overhaul. Delivered in 5 business days.</p>
+            <div class="price">From GBP 297</div>
+            <div class="price-note">One-time fee. No monthly retainer required.</div>
+            <a href="../contact.html" class="btn btn-dark" style="width:100%;margin-bottom:16px;">Book a Free Call</a>
+            <hr class="divider" />
+            <ul>
+              <li>Full profile copy rewrite</li>
+              <li>Keyword and SEO strategy</li>
+              <li>Headline variants (A/B tested)</li>
+              <li>Banner design brief</li>
+              <li>2 rounds of revisions</li>
+              <li>Implementation checklist</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section style="background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <div class="container">
+      <div class="section-head centered">
+        <span class="section-kicker">The Process</span>
+        <h2>How it works</h2>
+        <p>Simple, fast, and done for you.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step anim-fadeup d1">
+          <div class="step-num">01</div>
+          <h4>Discovery Call</h4>
+          <p>We spend 30 minutes understanding your goals, ICP and current positioning before writing a single word.</p>
+        </div>
+        <div class="process-step anim-fadeup d2">
+          <div class="step-num">02</div>
+          <h4>Strategy &amp; Copy</h4>
+          <p>We build your keyword strategy and write the full profile copy — headline, about, experience and skills.</p>
+        </div>
+        <div class="process-step anim-fadeup d3">
+          <div class="step-num">03</div>
+          <h4>Review &amp; Revise</h4>
+          <p>You review the copy and we refine until it is exactly right. Two full rounds of revisions included.</p>
+        </div>
+        <div class="process-step anim-fadeup d4">
+          <div class="step-num">04</div>
+          <h4>Go Live</h4>
+          <p>We send you an implementation checklist so you can update your profile in under 20 minutes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;padding:40px 0;">
+        <span class="section-kicker">Ready?</span>
+        <h2 style="color:var(--primary);font-size:clamp(1.8rem,3.5vw,2.6rem);letter-spacing:-0.03em;margin-bottom:14px;">Start with a free 30-minute call</h2>
+        <p style="color:var(--muted);margin-bottom:28px;max-width:48ch;margin-left:auto;margin-right:auto;">No pitch. No pressure. Just a honest conversation about whether we are the right fit for what you need.</p>
+        <a href="../contact.html" class="purple-pop">Book Your Free Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>BLAPE</h3>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;line-height:1.6;">B2B outreach systems that generate meetings, not noise.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <a href="linkedin-optimization.html">LinkedIn Optimisation</a>
+          <a href="cold-email-outreach.html">Cold Email Outreach</a>
+          <a href="email-deliverability.html">Email Deliverability</a>
+          <a href="cv-personal-branding.html">CV &amp; Personal Branding</a>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <a href="../about.html">About</a>
+          <a href="../resources.html">Resources</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <a href="mailto:info@apecstudio.com">info@apecstudio.com</a>
+          <a href="../contact.html">Book a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 BLAPE. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
