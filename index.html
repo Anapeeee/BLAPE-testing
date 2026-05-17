@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    /* ── Reset & base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #e8f0f7;
@@ -61,9 +60,7 @@
       font-size: 1.15rem; font-weight: 800;
       color: #1a3f65; letter-spacing: -0.02em;
     }
-    .nav {
-      display: flex; align-items: center; gap: 6px;
-    }
+    .nav { display: flex; align-items: center; gap: 6px; }
     .nav a {
       font-size: 0.9rem; font-weight: 500;
       color: #334;
@@ -82,7 +79,7 @@
     }
     .nav a.nav-cta:hover { background: #163256; }
 
-    /* ── Hero wrapper ── */
+    /* ── Hero ── */
     .hero-wrapper {
       padding-top: 62px;
       background: var(--bg);
@@ -102,10 +99,7 @@
       align-items: center;
       box-shadow: 0 24px 80px rgba(20,50,90,0.28);
     }
-
-    /* ── Hero Left ── */
     .hero-left { display: flex; flex-direction: column; gap: 0; }
-
     .eyebrow-pill {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.15);
@@ -126,7 +120,6 @@
       color: rgba(255,255,255,0.9);
       letter-spacing: 0.02em;
     }
-
     .hero-heading {
       font-family: 'Sora', sans-serif;
       font-size: clamp(2.6rem, 5vw, 3.6rem);
@@ -136,10 +129,7 @@
       color: var(--white);
       margin-bottom: 20px;
     }
-    .hero-heading .accent {
-      color: var(--accent);
-    }
-
+    .hero-heading .accent { color: var(--accent); }
     .hero-sub {
       font-size: 0.97rem;
       line-height: 1.6;
@@ -147,7 +137,6 @@
       margin-bottom: 22px;
       max-width: 36ch;
     }
-
     .tagline-pill {
       display: inline-block;
       background: rgba(155,109,255,0.25);
@@ -160,10 +149,7 @@
       letter-spacing: 0.01em;
       margin-bottom: 32px;
     }
-
-    .hero-btns {
-      display: flex; gap: 12px; flex-wrap: wrap;
-    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-book {
       background: white;
       color: #1a3f65;
@@ -188,10 +174,7 @@
       transition: background 0.18s;
     }
     .btn-contact:hover { background: rgba(255,255,255,0.2); }
-
-    /* ── Hero Right: Info Card ── */
     .hero-right { display: flex; flex-direction: column; gap: 12px; }
-
     .brand-card {
       background: rgba(255,255,255,0.14);
       border: 1px solid rgba(255,255,255,0.22);
@@ -208,14 +191,8 @@
       overflow: hidden;
     }
     .brand-avatar img { width: 36px; height: 36px; object-fit: contain; }
-    .brand-card-text strong {
-      display: block;
-      font-size: 1rem; font-weight: 800; color: white;
-    }
-    .brand-card-text span {
-      font-size: 0.82rem; color: var(--muted);
-    }
-
+    .brand-card-text strong { display: block; font-size: 1rem; font-weight: 800; color: white; }
+    .brand-card-text span { font-size: 0.82rem; color: var(--muted); }
     .problem-card {
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.18);
@@ -233,24 +210,237 @@
       flex-shrink: 0;
     }
     .problem-icon svg { width: 17px; height: 17px; stroke: rgba(255,255,255,0.85); }
-    .problem-card strong {
-      display: block;
-      font-size: 0.88rem; font-weight: 700; color: white;
-      margin-bottom: 3px;
-    }
-    .problem-card p {
-      font-size: 0.8rem; color: var(--muted); line-height: 1.45;
-    }
+    .problem-card strong { display: block; font-size: 0.88rem; font-weight: 700; color: white; margin-bottom: 3px; }
+    .problem-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
 
-    /* ── Services Section ── */
-    .services-section {
+    /* ════════════════════════════════
+       TOGGLE SECTION — WHO / WHAT
+    ════════════════════════════════ */
+    .toggle-section {
       background: var(--bg);
       padding: 80px 24px;
     }
-    .section-inner { max-width: 980px; margin: 0 auto; }
-    .section-head {
-      text-align: center; margin-bottom: 40px;
+    .toggle-inner {
+      max-width: 980px;
+      margin: 0 auto;
     }
+    .toggle-header {
+      margin-bottom: 40px;
+    }
+    .toggle-top-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #2472a4;
+      background: rgba(36,114,164,0.1);
+      border-radius: 50px;
+      padding: 5px 14px;
+      margin-bottom: 14px;
+    }
+    .toggle-header h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: #1a3f65;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+    .toggle-header p {
+      color: #667;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    /* Toggle pill */
+    .toggle-pill {
+      display: inline-flex;
+      background: white;
+      border: 1px solid #ccdcec;
+      border-radius: 50px;
+      padding: 5px;
+      gap: 4px;
+    }
+    .toggle-btn {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #556;
+      background: transparent;
+      border: none;
+      border-radius: 50px;
+      padding: 9px 22px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      letter-spacing: -0.01em;
+    }
+    .toggle-btn:hover { color: #1a3f65; }
+    .toggle-btn.active {
+      background: #1a3f65;
+      color: white;
+      box-shadow: 0 4px 14px rgba(26,63,101,0.22);
+    }
+    .toggle-btn.active.purple {
+      background: linear-gradient(135deg, #7c4dff, #9b6dff);
+      box-shadow: 0 4px 18px rgba(124,77,255,0.32);
+    }
+
+    /* Panels */
+    .toggle-panel {
+      display: none;
+      animation: fadeUp 0.38s ease both;
+    }
+    .toggle-panel.active { display: block; }
+
+    /* WHO grid — 2x2 */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .who-card {
+      background: white;
+      border: 1px solid #dce8f2;
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .who-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(26,63,101,0.1);
+    }
+    .who-card-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9b6dff;
+      background: rgba(155,109,255,0.1);
+      border-radius: 50px;
+      padding: 4px 12px;
+      margin-bottom: 14px;
+    }
+    .who-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a3f65;
+      margin-bottom: 6px;
+    }
+    .who-card .who-sub {
+      font-size: 0.83rem;
+      color: #8899aa;
+      font-style: italic;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .who-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .who-bullets li {
+      font-size: 0.84rem;
+      color: #445566;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.45;
+    }
+    .who-bullets li::before {
+      content: '';
+      width: 14px;
+      height: 2px;
+      background: #2472a4;
+      flex-shrink: 0;
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+
+    /* WHAT WE DO grid */
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .what-card {
+      background: white;
+      border: 1px solid #dce8f2;
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .what-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(26,63,101,0.1);
+    }
+    .what-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(36,114,164,0.08);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .what-card .what-hook {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #2472a4;
+      font-style: italic;
+      margin-bottom: 8px;
+      line-height: 1.4;
+      border-left: 3px solid #2472a4;
+      padding-left: 10px;
+    }
+    .what-card h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #1a3f65;
+      margin-bottom: 14px;
+    }
+    .what-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .what-bullets li {
+      font-size: 0.84rem;
+      color: #445566;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.45;
+    }
+    .what-bullets li::before {
+      content: '';
+      width: 14px;
+      height: 2px;
+      background: #2472a4;
+      flex-shrink: 0;
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+    .what-card .learn-more {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #2472a4;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .what-card .learn-more:hover { color: #1a3f65; }
+
+    /* ── Why BLAPE ── */
+    .why-section {
+      background: #dce8f2;
+      border-top: 1px solid #ccdcec;
+      border-bottom: 1px solid #ccdcec;
+      padding: 80px 24px;
+    }
+    .section-inner { max-width: 980px; margin: 0 auto; }
+    .section-head { text-align: center; margin-bottom: 40px; }
     .section-kicker {
       display: inline-block;
       font-size: 0.75rem; font-weight: 800;
@@ -267,49 +457,6 @@
       letter-spacing: -0.03em; margin-bottom: 10px;
     }
     .section-head p { color: #667; font-size: 0.97rem; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 18px;
-    }
-    .service-card {
-      background: white;
-      border: 1px solid #dce8f2;
-      border-radius: 20px;
-      padding: 28px 24px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 36px rgba(26,63,101,0.12);
-    }
-    .service-icon {
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      background: rgba(36,114,164,0.08);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px;
-    }
-    .service-card h3 {
-      font-size: 1rem; font-weight: 700; color: #1a3f65;
-      margin-bottom: 8px;
-    }
-    .service-card p { font-size: 0.86rem; color: #556; line-height: 1.55; margin-bottom: 14px; }
-    .learn-more {
-      font-size: 0.84rem; font-weight: 600; color: #2472a4;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .learn-more:hover { color: #1a3f65; }
-
-    /* ── Why BLAPE ── */
-    .why-section {
-      background: #dce8f2;
-      border-top: 1px solid #ccdcec;
-      border-bottom: 1px solid #ccdcec;
-      padding: 80px 24px;
-    }
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -374,10 +521,7 @@
       padding-bottom: 36px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .footer-col h3 {
-      font-size: 0.9rem; font-weight: 700;
-      margin-bottom: 14px; color: white;
-    }
+    .footer-col h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 14px; color: white; }
     .footer-col p { color: rgba(255,255,255,0.55); font-size: 0.87rem; line-height: 1.6; }
     .footer-col a {
       display: block; color: rgba(255,255,255,0.55);
@@ -395,7 +539,7 @@
 
     /* ── Animations ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
+      from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     .anim { animation: fadeUp 0.6s ease both; }
@@ -404,19 +548,16 @@
     .d3 { animation-delay: 0.25s; }
     .d4 { animation-delay: 0.35s; }
     .d5 { animation-delay: 0.45s; }
-    .d6 { animation-delay: 0.55s; }
 
     /* ── Responsive ── */
     @media (max-width: 720px) {
-      .hero-shell {
-        grid-template-columns: 1fr;
-        padding: 40px 28px;
-      }
+      .hero-shell { grid-template-columns: 1fr; padding: 40px 28px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .nav a:not(.nav-cta) { display: none; }
     }
     @media (max-width: 480px) {
       .footer-grid { grid-template-columns: 1fr; }
+      .cta-box { padding: 36px 24px; }
     }
   </style>
 </head>
@@ -442,32 +583,24 @@
   <!-- HERO -->
   <div class="hero-wrapper">
     <div class="hero-shell">
-
-      <!-- LEFT -->
       <div class="hero-left">
         <div class="eyebrow-pill anim d1">
           <div class="eyebrow-dot"></div>
           <span>LinkedIn going nowhere?</span>
         </div>
-
         <h1 class="hero-heading anim d2">
           Don't think<br>about it.<br>
           <span class="accent">We'll fix it.</span>
         </h1>
-
         <p class="hero-sub anim d3">
           A small team fixing LinkedIn, cold outreach and email deliverability for people who want results.
         </p>
-
         <div class="tagline-pill anim d4">Jobs. Leads. Deliverability.</div>
-
         <div class="hero-btns anim d5">
           <a href="contact.html" class="btn-book">Book a call</a>
           <a href="contact.html" class="btn-contact">Contact us</a>
         </div>
       </div>
-
-      <!-- RIGHT -->
       <div class="hero-right">
         <div class="brand-card anim d2">
           <div class="brand-avatar">
@@ -478,7 +611,6 @@
             <span>We fix the parts everyone hates doing</span>
           </div>
         </div>
-
         <div class="problem-card anim d3">
           <div class="problem-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -490,7 +622,6 @@
             <p>We build your professional presence online. LinkedIn, CV and work mindset.</p>
           </div>
         </div>
-
         <div class="problem-card anim d4">
           <div class="problem-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -502,7 +633,6 @@
             <p>We build the targeting, messaging and system behind your outreach.</p>
           </div>
         </div>
-
         <div class="problem-card anim d5">
           <div class="problem-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -515,52 +645,148 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- SERVICES -->
-  <section id="services" class="services-section">
-    <div class="section-inner">
-      <div class="section-head">
-        <span class="section-kicker">What We Do</span>
-        <h2>Four ways we generate meetings for you</h2>
-        <p>Every service is built around one goal: getting qualified decision-makers on a call with you.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </div>
-          <h3>LinkedIn Optimisation</h3>
-          <p>We rewrite your entire LinkedIn profile so decision-makers understand your value immediately and want to connect.</p>
-          <a href="services/linkedin-optimization.html" class="learn-more">Learn more &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <h3>Cold Email Outreach</h3>
-          <p>Full done-for-you campaigns — from ICP definition and list building to copy, launch and reply management.</p>
-          <a href="services/cold-email-outreach.html" class="learn-more">Learn more &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h3>Email Deliverability</h3>
-          <p>SPF, DKIM, DMARC, domain warm-up and blacklist monitoring — the technical infrastructure that keeps you in the inbox.</p>
-          <a href="services/email-deliverability.html" class="learn-more">Learn more &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <h3>CV and Personal Branding</h3>
-          <p>CVs and personal brands for senior professionals. We position you so headhunters and investors find you first.</p>
-          <a href="services/cv-personal-branding.html" class="learn-more">Learn more &rarr;</a>
+  <!-- ════ WHO / WHAT TOGGLE SECTION ════ -->
+  <section id="services" class="toggle-section">
+    <div class="toggle-inner">
+
+      <div class="toggle-header">
+        <span class="toggle-top-label">WHO WE HELP &amp; WHAT WE DO</span>
+        <h2>You, if this sounds familiar.</h2>
+        <p>For people and teams who are done guessing and ready to move.</p>
+        <div class="toggle-pill" role="tablist">
+          <button class="toggle-btn active" data-panel="who" role="tab" aria-selected="true">Who this is for</button>
+          <button class="toggle-btn" data-panel="what" role="tab" aria-selected="false">What we actually do</button>
         </div>
       </div>
+
+      <!-- WHO THIS IS FOR -->
+      <div class="toggle-panel active" id="panel-who">
+        <div class="who-grid">
+
+          <div class="who-card">
+            <span class="who-card-label">Job Seekers</span>
+            <h3>You're qualified. Nobody's calling.</h3>
+            <p class="who-sub">Your profile exists. It just doesn't work.</p>
+            <ul class="who-bullets">
+              <li>LinkedIn profile rewritten to attract recruiters</li>
+              <li>CV positioned for the roles you actually want</li>
+              <li>Outreach strategy that gets responses</li>
+            </ul>
+          </div>
+
+          <div class="who-card">
+            <span class="who-card-label">Founders &amp; Freelancers</span>
+            <h3>Great at the work. Hate selling it.</h3>
+            <p class="who-sub">You have clients. You need a system that finds more.</p>
+            <ul class="who-bullets">
+              <li>Cold email campaigns built and launched for you</li>
+              <li>LinkedIn presence that generates inbound</li>
+              <li>Deliverability set up so emails actually arrive</li>
+            </ul>
+          </div>
+
+          <div class="who-card">
+            <span class="who-card-label">Sales Teams</span>
+            <h3>Pipeline is inconsistent. You know it.</h3>
+            <p class="who-sub">One good month, one bad month. That ends here.</p>
+            <ul class="who-bullets">
+              <li>Outreach systems that run without hand-holding</li>
+              <li>Copy tested against real reply data</li>
+              <li>Infrastructure that scales without breaking</li>
+            </ul>
+          </div>
+
+          <div class="who-card">
+            <span class="who-card-label">Agencies</span>
+            <h3>You sell outreach. Yours doesn't work.</h3>
+            <p class="who-sub">Embarrassing — but fixable. We've seen it before.</p>
+            <ul class="who-bullets">
+              <li>Deliverability audit and full technical fix</li>
+              <li>White-label outreach systems for your clients</li>
+              <li>Sequences that get replies, not unsubscribes</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WHAT WE ACTUALLY DO -->
+      <div class="toggle-panel" id="panel-what">
+        <div class="what-grid">
+
+          <div class="what-card">
+            <div class="what-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+            <p class="what-hook">Profile getting ignored? It is likely the positioning.</p>
+            <h3>LinkedIn Optimisation</h3>
+            <ul class="what-bullets">
+              <li>Full profile rewrite and headline</li>
+              <li>Outreach strategy that does not get flagged</li>
+              <li>Message sequences people actually reply to</li>
+            </ul>
+            <a href="services/linkedin-optimization.html" class="learn-more">Learn more &rarr;</a>
+          </div>
+
+          <div class="what-card">
+            <div class="what-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <p class="what-hook">Emails landing in spam? This is why.</p>
+            <h3>Email Deliverability</h3>
+            <ul class="what-bullets">
+              <li>DNS records: SPF, DKIM and DMARC configured correctly</li>
+              <li>Domain warm-up and spam checks</li>
+              <li>Safer sending infrastructure that protects your domain</li>
+            </ul>
+            <a href="services/email-deliverability.html" class="learn-more">Learn more &rarr;</a>
+          </div>
+
+          <div class="what-card">
+            <div class="what-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <p class="what-hook">Sending cold email with no replies? The copy is wrong.</p>
+            <h3>Cold Email Outreach</h3>
+            <ul class="what-bullets">
+              <li>ICP definition and targeted list building</li>
+              <li>Copy written from real reply data — not guesswork</li>
+              <li>Full campaign management. You just take the calls.</li>
+            </ul>
+            <a href="services/cold-email-outreach.html" class="learn-more">Learn more &rarr;</a>
+          </div>
+
+          <div class="what-card">
+            <div class="what-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2472a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <p class="what-hook">Invisible to headhunters? Your positioning is the problem.</p>
+            <h3>CV &amp; Personal Branding</h3>
+            <ul class="what-bullets">
+              <li>CV written to pass ATS and impress humans</li>
+              <li>Personal brand that makes people reach out first</li>
+              <li>Positioning for senior roles, investors and press</li>
+            </ul>
+            <a href="services/cv-personal-branding.html" class="learn-more">Learn more &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -640,5 +866,28 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    // Toggle logic
+    const btns = document.querySelectorAll('.toggle-btn');
+    const panels = document.querySelectorAll('.toggle-panel');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.panel;
+
+        btns.forEach(b => {
+          b.classList.remove('active', 'purple');
+          b.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        if (target === 'what') btn.classList.add('purple');
+        btn.setAttribute('aria-selected', 'true');
+
+        document.getElementById('panel-' + target).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
