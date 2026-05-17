@@ -12,14 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    /* ── Eyebrow rotator ── */
+
+    /* ─── EYEBROW ROTATOR ─────────────────────────────────────── */
     @keyframes rotateFade {
-      0%   { opacity: 0; transform: translateY(7px);  }
-      8%   { opacity: 1; transform: translateY(0);    }
-      28%  { opacity: 1; transform: translateY(0);    }
-      36%  { opacity: 0; transform: translateY(-7px); }
-      100% { opacity: 0; transform: translateY(-7px); }
+      0%    { opacity: 0; transform: translateY(7px);  }
+      6%    { opacity: 1; transform: translateY(0);    }
+      28%   { opacity: 1; transform: translateY(0);    }
+      36%   { opacity: 0; transform: translateY(-7px); }
+      100%  { opacity: 0; transform: translateY(-7px); }
     }
+
     .eyebrow-rotator {
       display: inline-flex;
       align-items: center;
@@ -41,132 +43,42 @@
     }
     .eyebrow-item {
       position: absolute; left: 0; top: 0;
-      opacity: 0;
       color: rgba(255,255,255,0.9);
       font-weight: 700; font-size: 0.88rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      animation: rotateFade 14s cubic-bezier(0.4,0,0.2,1) infinite;
+      opacity: 0;
+      animation: rotateFade 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
       white-space: nowrap;
       will-change: opacity, transform;
     }
-    .eyebrow-item:nth-child(1) { animation-delay: 0s; }
-    .eyebrow-item:nth-child(2) { animation-delay: 3.5s; }
-    .eyebrow-item:nth-child(3) { animation-delay: 7s; }
+    .eyebrow-item:nth-child(1) { animation-delay: 0s;    }
+    .eyebrow-item:nth-child(2) { animation-delay: 3.5s;  }
+    .eyebrow-item:nth-child(3) { animation-delay: 7s;    }
     .eyebrow-item:nth-child(4) { animation-delay: 10.5s; }
 
-    /* ── H1 split styling ── */
-    .hero-h1-dim {
-      display: block;
-      color: rgba(255,255,255,0.55);
-      font-size: inherit;
-      font-weight: inherit;
-      line-height: 1.1;
+    /* ─── HERO H1 ─────────────────────────────────────────────── */
+    .hero-left h1 {
+      color: white;
+      font-size: clamp(2.8rem, 6vw, 4.4rem);
+      line-height: 1.04;
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+      font-weight: 900;
     }
-    .hero-h1-accent {
+    .hero-left h1 .h1-dim {
+      opacity: 0.55;
+      font-weight: 700;
+    }
+    .hero-left h1 .h1-accent {
       display: block;
-      line-height: 1.1;
-      background: linear-gradient(105deg, #ffffff 30%, #c4a8ff 70%, #a07fe8 100%);
+      background: linear-gradient(90deg, #ffffff 0%, #a8d8f0 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    /* ── Pill tags ── */
-    .hero-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 22px;
-      margin-bottom: 28px;
-    }
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 13px;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border: 1px solid;
-      backdrop-filter: blur(6px);
-    }
-    .hero-pill-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .pill-jobs {
-      background: rgba(47, 121, 168, 0.18);
-      border-color: rgba(47, 121, 168, 0.45);
-      color: #8ecfee;
-    }
-    .pill-jobs .hero-pill-dot { background: #5ab3dd; }
-
-    .pill-leads {
-      background: rgba(80, 180, 130, 0.15);
-      border-color: rgba(80, 180, 130, 0.4);
-      color: #7edbb5;
-    }
-    .pill-leads .hero-pill-dot { background: #50b482; }
-
-    .pill-deliverability {
-      background: rgba(160, 127, 232, 0.15);
-      border-color: rgba(160, 127, 232, 0.38);
-      color: #c4a8ff;
-    }
-    .pill-deliverability .hero-pill-dot { background: #a07fe8; }
-
-    /* ── CTA row with team badge ── */
-    .hero-cta-row {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .hero-cta-btns {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .team-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .team-avatars {
-      display: flex;
-    }
-    .team-avatars span {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #2f79a8, #1a3d5e);
-      border: 2px solid rgba(255,255,255,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 800;
-      color: rgba(255,255,255,0.85);
-      margin-left: -8px;
-      letter-spacing: 0;
-    }
-    .team-avatars span:first-child { margin-left: 0; }
-    .team-badge-text {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.35;
-      max-width: 110px;
-    }
-    .team-badge-text strong {
-      color: rgba(255,255,255,0.8);
-      font-weight: 700;
-    }
-
-    /* ── Why grid (unchanged) ── */
+    /* ─── WHY GRID ────────────────────────────────────────────── */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -187,6 +99,7 @@
     }
     .why-card h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 8px; }
     .why-card p  { color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+
   </style>
 </head>
 <body>
@@ -217,7 +130,6 @@
         <div class="hero-grid">
           <div class="hero-left">
 
-            <!-- Eyebrow rotator -->
             <div class="eyebrow-rotator anim-fadeup d1">
               <div class="eyebrow-dot"></div>
               <div class="eyebrow-track">
@@ -228,41 +140,16 @@
               </div>
             </div>
 
-            <!-- H1 split -->
             <h1 class="anim-fadeup d2">
-              <span class="hero-h1-dim">Don't think about it.</span>
-              <span class="hero-h1-accent">We'll fix it.</span>
+              <span class="h1-dim">Don't think about it.</span>
+              <span class="h1-accent">We'll fix it.</span>
             </h1>
 
-            <p class="anim-fadeup d3">BLAPE builds done-for-you outreach systems for B2B companies and consultants who are tired of posting content and hoping. We fill your calendar with qualified calls.</p>
+            <p class="anim-fadeup d3">A small team fixing LinkedIn, cold outreach and email deliverability for people who want results.</p>
 
-            <!-- Pills -->
-            <div class="hero-pills anim-fadeup d3">
-              <span class="hero-pill pill-jobs">
-                <span class="hero-pill-dot"></span>Jobs
-              </span>
-              <span class="hero-pill pill-leads">
-                <span class="hero-pill-dot"></span>Leads
-              </span>
-              <span class="hero-pill pill-deliverability">
-                <span class="hero-pill-dot"></span>Deliverability
-              </span>
-            </div>
-
-            <!-- CTA row + team badge -->
-            <div class="hero-cta-row anim-fadeup d4">
-              <div class="hero-cta-btns">
-                <a href="contact.html" class="btn btn-primary">Book a Free Call</a>
-                <a href="#services" class="btn btn-ghost-white">See What We Do</a>
-              </div>
-              <div class="team-badge">
-                <div class="team-avatars">
-                  <span>AJ</span>
-                  <span>MK</span>
-                  <span>NP</span>
-                </div>
-                <p class="team-badge-text"><strong>Small team.</strong> Big results.</p>
-              </div>
+            <div class="btn-container anim-fadeup d4">
+              <a href="contact.html" class="btn btn-primary">Book a Free Call</a>
+              <a href="#services" class="btn btn-ghost-white">See What We Do</a>
             </div>
 
           </div>
